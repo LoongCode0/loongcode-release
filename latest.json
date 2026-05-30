@@ -1,1 +1,11 @@
-{}
+{
+    "version": "0.1.0",
+    "notes": "",
+    "pub_date": "2026-05-30T15:05:34Z",
+    "platforms": {
+      "windows-x86_64": {
+        "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdnhaUlNGRWtMeFQ4bDRjRm5xa0ZuU1RkY293NUxkRzVmZjFVaWxtUlVOSDJMWnk0MHNXUGt6aTB0TWNEbTRUQWJyZVNuSXNZOFkrejY1K3k1TnVya2FvdktkQzU3S3djPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwMTUzNTM0CWZpbGU6TG9uZ0NvZGVfMC4xLjBfeDY0LXNldHVwLmV4ZQpHSXNlZmZrclFuRER6eUFqQmQ4ZE1BSU5RTUwwQk5mMmNSMXJJbGcxU1B1eUV3dXZVZWdiSjNDejBaRUhVR04rckJtQXpZWjZYT1RpV1NuRFNXcVVDZz09Cg==",
+        "url": "https://gitee.com/long-code-1/long-code/releases/download/v0.1.0/LongCode_0.1.0_x64-setup.exe"
+      }
+    }
+  }
