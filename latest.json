@@ -1,11 +1,23 @@
 {
-  "version": "0.2.4",
+  "version": "0.2.5",
   "notes": "",
-  "pub_date": "2026-05-31T15:13:08Z",
+  "pub_date": "2026-05-31T18:42:02Z",
   "platforms": {
+    "darwin-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdnhaUlNGRWtMeFNvNWN0S0hqSmg1by9vNXhJNWJDbCtUV2dLei9Yc1lXeUowRGEvNUxJWDhXOTMxaGhPV0d1T0Q4U3dYQWRPUzRQOFB5ZGZRcG5ZcVNYc2FzdFFsaFE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwMjUyMjEwCWZpbGU6TG9vbmdDb2RlLmFwcC50YXIuZ3oKbHZmZ2VHVFh4bmt1b3ZzSTkvRXMrb3hvb2JJVkdtRUd0bHMxc3BsOFNNV3VjTitRSHY1U1FEQVlpODA2c1J4bjdXRjdPc2FUNnZzQmVyL2VzQlMrQlE9PQo=",
+      "url": "https://gitee.com/loong-code-1/loong-code/releases/download/0.2.5/LoongCode.app.tar.gz"
+    },
+    "darwin-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdnhaUlNGRWtMeFNvNWN0S0hqSmg1by9vNXhJNWJDbCtUV2dLei9Yc1lXeUowRGEvNUxJWDhXOTMxaGhPV0d1T0Q4U3dYQWRPUzRQOFB5ZGZRcG5ZcVNYc2FzdFFsaFE4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwMjUyMjEwCWZpbGU6TG9vbmdDb2RlLmFwcC50YXIuZ3oKbHZmZ2VHVFh4bmt1b3ZzSTkvRXMrb3hvb2JJVkdtRUd0bHMxc3BsOFNNV3VjTitRSHY1U1FEQVlpODA2c1J4bjdXRjdPc2FUNnZzQmVyL2VzQlMrQlE9PQo=",
+      "url": "https://gitee.com/loong-code-1/loong-code/releases/download/0.2.5/LoongCode.app.tar.gz"
+    },
+    "windows-aarch64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdnhaUlNGRWtMeGQ4NFc5ZnpEUE8xYVA1YUZWelBvR0V0RUo1SmtxM0Z0Mmo0bEJQOUptdXc2aDlIYmlyNWl1Y3JlYThIOTYzbHl6aUsyZThqOUVpcEIwQmRSOERDY2c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwMjUyNTg2CWZpbGU6TG9vbmdDb2RlXzAuMi41X2FybTY0LXNldHVwLmV4ZQpyeGxzbWFrTlFoVEhFOTNicDI2YmhPcUpwTFJPYzVVUmNHQVllcE95eVZma1pNY0MxSnpKYkVxaGZLenpNVWhacTJBVzFQdzlhS0E5K2dOSkp6Q3FEdz09Cg==",
+      "url": "https://gitee.com/loong-code-1/loong-code/releases/download/0.2.5/LoongCode_0.2.5_arm64-setup.exe"
+    },
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdnhaUlNGRWtMeGI1N0FlbnhteXhlbnJxeFRiRmRzNU1zNndGRHZnNk1JZ0x0ekNyM3krenJ5SzVPaENVazIyZkJzcDV1YkIzbGpWL01hVnNLQW9JNnRPWEZLN0NjYWc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwMjQwMzg4CWZpbGU6TG9vbmdDb2RlXzAuMi40X3g2NC1zZXR1cC5leGUKT0Q0N3VxUVNkY1VXSytDRXpBMTQwQ1J0TXFIcGdkSXVwOHNqelR2RittODRuY0xJVmZ3RWlaMzduNTVwZkh1YmQyS2VSNlhRMXlWV2hXcFgwQ0VpQWc9PQo=",
-      "url": "https://gitee.com/loong-code-1/loong-code/releases/download/0.2.4/LoongCode_0.2.4_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdnhaUlNGRWtMeFVweWJVdjBGTjU5NEVxaDVOWlpVTGVPY3JQbmtjMEhlUisyc1Z2Z1FGcmpEMnBkelRiZHJFdERWdnpPOEdpMGJHS1B5L1RCeFhzYkZqSjhwQmVTY2drPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwMjUyNzIzCWZpbGU6TG9vbmdDb2RlXzAuMi41X3g2NC1zZXR1cC5leGUKRW5YSWdrSGxaN1ZHT2tRZzB3OFhVUnV6MXZlU2VyTnpkdG9XZEY5aTFZdTd6TmNtMm9vcnhtZW1KRUtJbzdGc29ydmNnWnRGc1ZxWTFPY2RyaHpSRHc9PQo=",
+      "url": "https://gitee.com/loong-code-1/loong-code/releases/download/0.2.5/LoongCode_0.2.5_x64-setup.exe"
     }
   }
 }
