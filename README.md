@@ -23,10 +23,10 @@
 它把命令行里的 Agent 编程体验，搬进了一个真正的 IDE 式界面：
 
 - 每一个「任务」对应一个独立的 Claude Code 会话；
-- 应用以子进程方式拉起 `claude`（或 `reclaude`）CLI，通过 stdin/stdout 以 stream-json 协议通信；
+- 应用以子进程方式拉起 `claude` CLI，通过 stdin/stdout 以 stream-json 协议通信；
 - 把事件流实时渲染成对话 UI，并在同一个窗口里集成终端、文件树、Git Review、命令 / 文件面板，以及各类设置。
 
-> ⚠️ **重要：LoongCode 自身不直接调用 Anthropic API。** 所有模型交互都由它拉起的 CLI 子进程完成。因此在使用前，你需要先在本机安装并登录 **Claude Code CLI**（`claude` 或 `reclaude`）。
+> ⚠️ **重要：LoongCode 自身不直接调用 Anthropic API。** 所有模型交互都由它拉起的 CLI 子进程完成。因此在使用前，你需要先在本机安装并登录 **Claude Code CLI**。
 
 ---
 
@@ -58,7 +58,6 @@
 ### 配置与扩展
 - **Skills（技能）/ MCP 服务器 / Plugins（插件）** 的可视化管理。
 - **Model Providers（模型供应商）** 配置，自由切换后端。
-- **CLI 选择器** —— 在 `claude` 与 `reclaude` 等 CLI 之间切换。
 - **代理设置** —— 支持 http / https 代理（不支持 SOCKS）。
 - **用量统计（Usage）** —— 直观查看消耗。
 
@@ -76,7 +75,7 @@
 | 项目 | 说明 |
 | --- | --- |
 | **操作系统** | Windows 10/11（x64 / ARM64）、macOS（Apple Silicon 与 Intel，Universal） |
-| **必备依赖** | **Claude Code CLI**（`claude` 或 `reclaude`）已安装并完成登录 / 配置 |
+| **必备依赖** | **Claude Code CLI** 已安装并完成登录 / 配置 |
 | **网络（可选）** | 如需走代理，仅支持 http / https 代理（不支持 SOCKS） |
 
 > 实际可下载的安装包，请以本仓库 [Releases](../../releases) 页面的产物为准。
@@ -98,7 +97,7 @@
 
 ## 🚀 快速开始
 
-1. **准备 CLI** —— 安装并登录 Claude Code CLI（`claude` 或 `reclaude`）。
+1. **准备 CLI** —— 安装并登录 Claude Code CLI。
 2. **安装并打开 LoongCode**。
 3. **添加工作区** —— 指向你的项目目录。
 4. **新建任务** —— 输入需求，回车即开始一个 Claude Code 会话。
@@ -121,7 +120,7 @@ https://github.com/LoongCode0/loongcode-release/releases/latest/download/latest.
 ## ❓ 常见问题
 
 **Q：装好后无法对话 / 没有任何模型响应？**
-A：LoongCode 不自带模型能力，它依赖本机的 Claude Code CLI。请确认 `claude`（或 `reclaude`）已安装、在 PATH 中、并已完成登录。
+A：LoongCode 不自带模型能力，它依赖本机的 Claude Code CLI。请确认 `claude` 已安装、在 PATH 中、并已完成登录。
 
 **Q：公司网络需要代理怎么办？**
 A：在应用设置中配置 http / https 代理。注意被拉起的 CLI 仅支持 http/https，不支持 SOCKS。
