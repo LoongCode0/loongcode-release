@@ -1,11 +1,11 @@
 {
-    "version": "0.2.0",
-    "notes": "",
-    "pub_date": "2026-05-30T18:29:07Z",
-    "platforms": {
-      "windows-x86_64": {
-        "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdnhaUlNGRWtMeFFWOFk5NG1obzh2ZlB1SkZJZnBvZHpoMTlTYVJETlJTckR6QVBHZkRoVlBzQ1VSL2gxbUtqY0x3VzRNcDlZcmRSQnhEek9qMDNOdnZiNXNIRmZUZHd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwMTYzMjYyCWZpbGU6TG9uZ0NvZGVfMC4yLjBfeDY0LXNldHVwLmV4ZQpTZ0VKUjBYMUU1TGJFVFhwWWJVN254UTBXNUVmZXArbkF2YU13Z1NzM1JNUHMyanNlUmVzQlZSb1pwSGNtaHpVSEtrTmRCS1IxTHRCV1NsWGhROVRBdz09Cg==",
-        "url": "https://gitee.com/long-code-1/long-code/releases/download/0.2.0/LongCode_0.2.0_x64-setup.exe"
-      }
+  "version": "0.2.1",
+  "notes": "",
+  "pub_date": "2026-05-31T07:44:39Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVRdnhaUlNGRWtMeGRLNjU3b0pwdzVHcnBHSk50T0Z5NVhUZXNCUU5pdzVMa0t3aHY1Tnp6ZWppLzVvcXhsbHRMQjNuQUxaN3kxVWthL1BUQnE4Vk9VaGpLcGdCZzVhYnd3PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgwMjEzNDc5CWZpbGU6TG9uZ0NvZGVfMC4yLjFfeDY0LXNldHVwLmV4ZQpyZzNBOXhTTENuMms2TzJVY29DVGhOQjlvcmFZU3V6MXhpRGd4SDJXazE0T2oxOUVPcnhlakQyZzBSeHNjY1JhV3ZIMENnL2xQZk9EckIwbm5EQWhEZz09Cg==",
+      "url": "https://gitee.com/long-code-1/long-code/releases/download/0.2.1/LongCode_0.2.1_x64-setup.exe"
     }
   }
+}
