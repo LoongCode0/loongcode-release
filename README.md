@@ -6,7 +6,7 @@
 
 将 Claude Code CLI 包裹进一个现代化的桌面工作台 —— 多会话对话、集成终端、文件树、Git Review、命令 / 文件面板，以及 MCP、插件、技能、模型供应商的可视化管理，开箱即用。
 
-![version](https://img.shields.io/badge/version-0.2.4-6d5efc)
+![version](https://img.shields.io/badge/version-0.2.5-6d5efc)
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-444)
 ![built with](https://img.shields.io/badge/built%20with-Tauri%202%20%2B%20React%2019-2f6df6)
 
