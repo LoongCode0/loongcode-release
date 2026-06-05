@@ -6,7 +6,7 @@
 
 将 Claude Code CLI 包裹进一个现代化的桌面工作台 —— 多会话对话、集成终端、文件树、Git Review、命令 / 文件面板，以及 MCP、插件、技能、模型供应商的可视化管理，开箱即用。
 
-![version](https://img.shields.io/badge/version-0.4.0-6d5efc)
+![version](https://img.shields.io/badge/version-0.4.1-6d5efc)
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-444)
 ![built with](https://img.shields.io/badge/built%20with-Tauri%202%20%2B%20React%2019-2f6df6)
 
@@ -35,7 +35,7 @@
 ### 会话与任务
 - **多工作区 / 多任务管理** —— 每个任务都是一个独立、可恢复的 Claude Code 会话。
 - **历史精确还原** —— 从 Claude 的会话 JSONL 加上应用侧的 sidecar 还原对话，连用户输入里的文件、命令、图片 chip 身份都能 1:1 复原。
-- **会话分叉 / 停止 / 重跑** —— 从任意历史节点 fork 出新会话；「停止」只回滚本轮新增内容。
+- **会话分叉 / 优雅中断 / 重跑** —— 从任意历史节点 fork 出新会话；点「停止」等价于按 ESC 优雅中断，保留已生成内容、可继续对话。
 - **编辑历史用户消息**，并从该点继续。
 - **子 Agent 子对话** —— 子 Agent 的对话被路由进独立的折叠卡片，主线清晰不打架。
 
@@ -61,6 +61,7 @@
 - **Model Providers（模型供应商）** 配置，自由切换后端。
 - **依赖管理 + 运行时版本管理** —— 依赖按必须 / 可选分层呈现；对 `uv` / `pnpm`（及 `bun`）可列出 / 安装 / 卸载 / 切换多版本，并支持一键兜底安装。
 - **代理设置** —— 支持 http / https 代理（不支持 SOCKS）。
+- **环境变量设置** —— 为 Claude Code CLI 子进程注入自定义环境变量（改动自动触发子进程重启）。
 - **用量统计（Usage）** —— 直观查看消耗。
 
 ### 桌面体验
