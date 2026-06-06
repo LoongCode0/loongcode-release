@@ -26,7 +26,9 @@
 - 应用以子进程方式拉起 `claude` CLI，通过 stdin/stdout 以 stream-json 协议通信；
 - 把事件流实时渲染成对话 UI，并在同一个窗口里集成终端、文件树、Git Review、命令 / 文件面板，以及各类设置。
 
-> ⚠️ **重要：LoongCode 自身不直接调用 Anthropic API。** 所有模型交互都由它拉起的 CLI 子进程完成。因此在使用前，你需要先在本机安装并登录 **Claude Code CLI**。
+> ⚠️ **重要：LoongCode 自身不直接调用 Anthropic API。** 所有模型交互都由它拉起的 CLI 子进程完成。因此在使用前，你需要先在本机准备好两个**必备依赖**：已安装并登录的 **Claude Code CLI**，以及 **Git**。
+>
+> 👉 没装也不必离开应用：LoongCode 内置**「依赖管理」**面板，可直接一键安装 Claude Code CLI 与 Git（见下方「系统要求」与「🧩 依赖与一键安装」）；登录仍需你在装好后自行完成。
 
 ---
 
@@ -62,7 +64,7 @@
 ### 配置与扩展
 - **Skills（技能）/ MCP 服务器 / Plugins（插件）** 的可视化管理。
 - **Model Providers（模型供应商）** 配置，自由切换后端。
-- **依赖管理 + 运行时版本管理** —— 依赖按必须 / 可选分层呈现；对 `uv` / `pnpm`（及 `bun`）可列出 / 安装 / 卸载 / 切换多版本，并支持一键兜底安装。
+- **依赖管理 + 运行时版本管理** —— 依赖按必须 / 可选分层呈现；**必备依赖 Claude Code CLI 与 Git 支持应用内一键安装**（Windows 直接装好，macOS 的 Git 走系统 Xcode 命令行工具引导）；对 `uv` / `pnpm`（及 `bun`）可列出 / 安装 / 卸载 / 切换多版本，并支持一键兜底安装。
 - **代理设置** —— 支持 http / https 代理（不支持 SOCKS）。
 - **环境变量设置** —— 为 Claude Code CLI 子进程注入自定义环境变量（改动自动触发子进程重启）。
 - **用量统计（Usage）** —— 直观查看消耗。
@@ -84,9 +86,11 @@
 | 项目 | 说明 |
 | --- | --- |
 | **操作系统** | Windows 10/11（x64 / ARM64）、macOS（Apple Silicon 与 Intel，Universal） |
-| **必备依赖** | **Claude Code CLI** 已安装并完成登录 / 配置 |
+| **必备依赖** | **Claude Code CLI**（已安装并完成登录 / 配置）与 **Git**；两者均可在应用内一键安装 |
 | **网络（可选）** | 如需走代理，仅支持 http / https 代理（不支持 SOCKS） |
 
+> 💡 **没装这两个依赖也没关系**：装好 LoongCode 后进入 **设置 →「依赖管理」**，即可一键安装 Claude Code CLI 与 Git，无需手动折腾命令行（详见下方「🧩 依赖与一键安装」）。
+>
 > 实际可下载的安装包，请以本仓库 [Releases](../../releases) 页面的产物为准。
 
 ---
@@ -98,15 +102,37 @@
    - **Windows**：NSIS 安装程序（`.exe`），安装向导内置中 / 英文界面。
    - **macOS**：磁盘镜像（`.dmg`）/ 应用包。
 3. 运行安装包，按向导完成安装。
-4. 首次启动前，请确认本机已安装并登录 **Claude Code CLI**（见上方系统要求）。
+4. 首次使用前，确保本机已安装 **Claude Code CLI**（并登录）与 **Git**；若尚未安装，可在启动后到 **设置 →「依赖管理」** 一键安装（见下方「🧩 依赖与一键安装」）。
 
 > 若系统弹出来源安全提示（Windows SmartScreen / macOS Gatekeeper），按系统指引选择继续运行即可。
 
 ---
 
+## 🧩 依赖与一键安装
+
+LoongCode 运行需要两个**必备依赖**：
+
+- **Claude Code CLI** —— 提供模型能力（应用本身不直接调用 Anthropic API）。
+- **Git** —— 驱动分支切换、变更 Review、worktree 等 Git 工作流。
+
+本机还没装也没关系，**无需手动敲命令行**：打开 LoongCode，进入 **设置 →「依赖管理」**，在「必须依赖」分组里就能看到它们的安装状态，点 **「安装」** 即可一键装好。
+
+| 必备依赖 | Windows | macOS |
+| --- | --- | --- |
+| **Claude Code CLI** | 一键安装（官方安装脚本） | 一键安装（官方安装脚本） |
+| **Git** | 一键安装（便携版 PortableGit，装入应用目录） | 点「触发系统安装」调起系统 Xcode 命令行工具安装；也可自行 `brew install git` |
+
+- 安装过程实时显示日志，完成后自动重新检测状态。
+- 代理环境下，可在该面板为依赖单独配置 http / https 代理后再安装。
+- 「可选依赖」`uv` / `pnpm` / `bun` 同样支持一键安装与多版本切换。
+
+> ⚠️ 应用只能帮你把 Claude Code CLI **装好**，**登录仍需自行完成**：在集成终端运行 `claude` 按提示登录，或在 **设置 →「模型供应商」** 配置你的后端。
+
+---
+
 ## 🚀 快速开始
 
-1. **准备 CLI** —— 安装并登录 Claude Code CLI。
+1. **准备依赖** —— 装好 Claude Code CLI 与 Git 并登录 CLI；没装也可以先打开 LoongCode，到 **设置 →「依赖管理」** 一键安装。
 2. **安装并打开 LoongCode**。
 3. **添加工作区** —— 指向你的项目目录。
 4. **新建任务** —— 输入需求，回车即开始一个 Claude Code 会话。
@@ -127,6 +153,9 @@ https://github.com/LoongCode0/loongcode-release/releases/latest/download/latest.
 ---
 
 ## ❓ 常见问题
+
+**Q：本机还没装 Claude Code CLI 或 Git，必须手动装吗？**
+A：不用。打开 LoongCode 后进入 **设置 →「依赖管理」**，在「必须依赖」里点「安装」即可。Windows 上 Claude Code CLI 与 Git 都能直接装好；macOS 上 Git 会调起系统 Xcode 命令行工具安装。装好 Claude Code CLI 后记得完成登录。
 
 **Q：装好后无法对话 / 没有任何模型响应？**
 A：LoongCode 不自带模型能力，它依赖本机的 Claude Code CLI。请确认 `claude` 已安装、在 PATH 中、并已完成登录。
