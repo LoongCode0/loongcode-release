@@ -6,7 +6,7 @@
 
 将 Claude Code CLI 包裹进一个现代化的桌面工作台 —— 多会话对话、集成终端、文件树、Git Review、命令 / 文件面板，以及 MCP、插件、技能、模型供应商的可视化管理，开箱即用。
 
-![version](https://img.shields.io/badge/version-0.4.3-6d5efc)
+![version](https://img.shields.io/badge/version-0.5.0-6d5efc)
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-444)
 ![built with](https://img.shields.io/badge/built%20with-Tauri%202%20%2B%20React%2019-2f6df6)
 
@@ -42,6 +42,7 @@
 - **会话分叉 / 优雅中断 / 重跑** —— 从任意历史节点 fork 出新会话；点「停止」等价于按 ESC 优雅中断，保留已生成内容、可继续对话。
 - **编辑历史用户消息**，并从该点继续。
 - **子 Agent 子对话** —— 子 Agent 的对话被路由进独立的折叠卡片，主线清晰不打架。
+- **移动端支持（微信 ClawBot）** —— 绑定微信官方 ClawBot 机器人后，用手机微信即可远程新建 / 驱动任务、接收 AI 回复，连交互式提问（AskUserQuestion）也能回数字作答。
 
 ### 对话体验
 - **富文本消息气泡** —— Markdown 渲染、表格、代码语法高亮、Markdown 预览。
@@ -57,7 +58,7 @@
 - **集成终端** —— 基于 xterm.js + PTY 的真实终端。
 - **文件树侧栏 + 侧边文件面板 + Monaco 编辑器** —— 浏览、查看代码与 Diff。
 - **文件树多选与文件操作** —— 单击选中 / 拖拽框选，复制 / 剪切 / 粘贴（接入系统文件剪贴板，与资源管理器互通）、新建 / 重命名 / 删除，支持 `Del` 与 `Ctrl+C/X/V` 快捷键。
-- **Git 工作流** —— 分支切换、变更 Review 面板、提交菜单、worktree 自动检测与跟随。
+- **Git 工作流** —— 分支切换、变更 Review 面板、提交菜单（含 ✨ 一键生成提交消息）、worktree 自动检测与跟随。
 - **内嵌浏览器面板** —— 在右侧面板直接打开网页，支持多标签、跨任务共享，查文档 / 预览页面无需离开应用。
 - **在文件资源管理器中打开**当前工作区。
 
