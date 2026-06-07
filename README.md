@@ -6,7 +6,7 @@
 
 将 Claude Code CLI 包裹进一个现代化的桌面工作台 —— 多会话对话、集成终端、文件树、Git Review、命令 / 文件面板，以及 MCP、插件、技能、模型供应商的可视化管理，开箱即用。
 
-![version](https://img.shields.io/badge/version-0.5.0-6d5efc)
+![version](https://img.shields.io/badge/version-0.5.1-6d5efc)
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-444)
 ![built with](https://img.shields.io/badge/built%20with-Tauri%202%20%2B%20React%2019-2f6df6)
 
@@ -76,6 +76,7 @@
 - **新建任务记住上次配置** —— 新建任务 / 技能自动继承上一次使用的模型供应商与参数。
 - **无边框透明窗口** + 亚克力 / vibrancy 模糊，失败时优雅降级。
 - **深色主题**、蓝紫渐变视觉、金色 wordmark。
+- **界面语言（中 / 英）** —— 整个图形界面支持中英文切换，默认跟随系统语言、识别不到时回退英语，可在「设置 → 常规」随时切换；AI 对话内容不受影响。
 - **中 / 英文安装界面**，安装时可选语言。
 - **内置自动更新** —— 启动后静默检查并提示升级。
 - **新手引导（Onboarding Tour）** —— 第一次使用不迷路。
