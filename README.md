@@ -6,7 +6,7 @@
 
 将 Claude Code CLI 包裹进一个现代化的桌面工作台 —— 多会话对话、集成终端、文件树、Git Review、命令 / 文件面板，以及 MCP、插件、技能、模型供应商的可视化管理，开箱即用。
 
-![version](https://img.shields.io/badge/version-0.5.1-6d5efc)
+![version](https://img.shields.io/badge/version-0.5.2-6d5efc)
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-444)
 ![built with](https://img.shields.io/badge/built%20with-Tauri%202%20%2B%20React%2019-2f6df6)
 
@@ -63,8 +63,8 @@
 - **在文件资源管理器中打开**当前工作区。
 
 ### 配置与扩展
-- **Skills（技能）/ MCP 服务器 / Plugins（插件）** 的可视化管理。
-- **Model Providers（模型供应商）** 配置，自由切换后端。
+- **Skills（技能）/ MCP 服务器 / Plugins（插件）/ 子智能体（Subagents）** 的可视化管理 —— 子智能体支持**用户 / 项目 / 插件**三作用域的查看、新建、编辑、删除与启停（插件提供者只读）。
+- **Model Providers（模型供应商）** 配置，自由切换后端 —— 常见模型内置**上下文窗口出厂默认值**，新增模型时输入框占位符直接给出推荐值（留空也有合理默认）。
 - **依赖管理 + 运行时版本管理** —— 依赖按必须 / 可选分层呈现；**必备依赖 Claude Code CLI 与 Git 支持应用内一键安装**（Windows 直接装好，macOS 的 Git 走系统 Xcode 命令行工具引导）；对 `uv` / `pnpm`（及 `bun`）可列出 / 安装 / 卸载 / 切换多版本，并支持一键兜底安装。
 - **代理设置** —— 支持 http / https 代理（不支持 SOCKS）。
 - **环境变量设置** —— 为 Claude Code CLI 子进程注入自定义环境变量（改动自动触发子进程重启）。
