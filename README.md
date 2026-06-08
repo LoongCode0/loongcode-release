@@ -10,9 +10,13 @@
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-444)
 ![built with](https://img.shields.io/badge/built%20with-Tauri%202%20%2B%20React%2019-2f6df6)
 
+[![版本时间线](https://img.shields.io/badge/%E7%89%88%E6%9C%AC%E6%97%B6%E9%97%B4%E7%BA%BF-%E5%9C%A8%E7%BA%BF%E6%9F%A5%E7%9C%8B-6d5efc)](https://loongcode0.github.io/loongcode-release/)
+
 </div>
 
 > 📦 **这里是 LoongCode 的官方发布仓库。** 它提供各平台安装包下载，并作为应用「自动更新」的下载源（`latest.json`）。如需源码与开发说明，请前往项目主仓库。
+
+> 📈 **版本时间线 / 后续规划**：**<https://loongcode0.github.io/loongcode-release/>** —— 以时间线展示各版本已完成功能摘要，以及后续规划（Codex 接入 / Workflow / Agent Team 等）。
 
 ---
 
