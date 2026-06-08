@@ -1,0 +1,11 @@
+{
+  "name": "loongcode-release-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "LoongCode 版本时间线静态站(GitHub Pages, docs/)",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "serve": "node bin/serve.mjs"
+  }
+}

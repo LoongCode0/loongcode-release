@@ -1,0 +1,111 @@
+[
+  {
+    "version": null,
+    "status": "planned",
+    "date": "待排期",
+    "title": "规划方向（未排期）",
+    "summary": [
+      "Codex 接入 —— 继 Claude Code 后接入更多 CLI 工具",
+      "Workflow 工作流编排支持",
+      "Agent Team 多智能体团队协作"
+    ],
+    "tags": ["Codex", "Workflow", "Agent Team"],
+    "patches": [],
+    "fullNotesUrl": null
+  },
+  {
+    "version": "0.6.0",
+    "status": "latest",
+    "date": "2026-06-09",
+    "title": "飞书机器人接入 · 分屏对话",
+    "summary": [
+      "飞书（Lark）机器人：扫码建应用、私聊转发 / 群 @ 触发，原生 Rust 长连接 + 连接健康灯",
+      "分屏对话：主区二维平铺、跨工作区混排、布局持久化、Ctrl+Shift+T 撤销关闭",
+      "每任务独立 CLI 选择 · 机器人回复粒度按会话覆盖"
+    ],
+    "tags": ["移动端", "多分栏", "Rust"],
+    "patches": []
+  },
+  {
+    "version": "0.5.0",
+    "status": "released",
+    "date": "2026-06-07",
+    "title": "移动端支持（微信 ClawBot）",
+    "summary": [
+      "绑定微信 ClawBot：手机远程新建 / 驱动任务、收发 AI 回复、对交互式提问回数字作答",
+      "worktree 任务跨重启恢复修复 · 提交对话框 ✨ 一键生成提交消息",
+      "pnpm 运行时版本管理调整 · 变更计数与审查面板对齐"
+    ],
+    "tags": ["移动端", "微信", "Git"],
+    "patches": [
+      { "version": "0.5.1", "note": "界面中英切换" },
+      { "version": "0.5.2", "note": "子智能体管理" }
+    ]
+  },
+  {
+    "version": "0.4.0",
+    "status": "released",
+    "date": "2026-06-04",
+    "title": "全应用右键菜单 · 依赖运行时管理",
+    "summary": [
+      "对话区 / 文件树 / 任务行全场景自定义右键;文件树多选 + 系统剪贴板复制剪切粘贴",
+      "依赖管理升级:uv / pnpm / bun 多版本列出 / 安装 / 切换,依赖按必须·可选分层",
+      "后台任务栏闪烁提醒 · 新建任务记住上次配置"
+    ],
+    "tags": ["右键菜单", "依赖管理"],
+    "patches": [
+      { "version": "0.4.1", "note": "优雅中断 · 环境变量" },
+      { "version": "0.4.2", "note": "新建任务草稿态" },
+      { "version": "0.4.3", "note": "任务归档" }
+    ]
+  },
+  {
+    "version": "0.3.0",
+    "status": "released",
+    "date": "2026-06-02",
+    "title": "内嵌浏览器 · 选元素喂给 AI",
+    "summary": [
+      "右侧面板内嵌浏览器(地址栏 + 原生前进 / 后退 / 刷新)",
+      "页面选元素 → 生成 chip 插入对话;AI 回复链接就地打开",
+      "内置命令与技能识别 · 侧栏版本号 + 应用内 changelog"
+    ],
+    "tags": ["内嵌浏览器", "命令"],
+    "patches": [
+      { "version": "0.3.1", "note": "扩展思考 · 上下文自动恢复" },
+      { "version": "0.3.2", "note": "用量指示器 · 依赖管理" }
+    ]
+  },
+  {
+    "version": "0.2.0",
+    "status": "released",
+    "date": "2026-05-31",
+    "title": "Git Worktree 侦测与跟随",
+    "summary": [
+      "Agent 执行 git worktree add 后,文件树 / Git / 终端 / 面板整体自动跟随(可撤销)",
+      "统一分支 / worktree 切换器、应用内新建 / 移除、worktree 移除后自动反向脱离",
+      "进程与会话零风险:跟随仅在 UI 层,Claude 进程 cwd 恒为主仓库"
+    ],
+    "tags": ["worktree", "Git"],
+    "patches": [
+      { "version": "0.2.1", "note": "worktree 跟随打磨" },
+      { "version": "0.2.2", "note": "更新检查提速" },
+      { "version": "0.2.3", "note": "代理设置 · 回合工具栏" },
+      { "version": "0.2.4", "note": "更名 LoongCode" },
+      { "version": "0.2.5", "note": "多平台 CI 构建" },
+      { "version": "0.2.6", "note": "多主题 · 代码回滚" }
+    ]
+  },
+  {
+    "version": "0.1.0",
+    "status": "released",
+    "date": "2026-05-30",
+    "title": "首个公开版本 · Claude Code 桌面外壳",
+    "summary": [
+      "图形化 Claude Code 会话:多任务 / 多工作区、Token 级流式、工具调用折叠卡片",
+      "集成终端 · 文件树 · Git 审查 · 斜杠命令 / @文件面板 · Todo 聚合 · 用量统计",
+      "模型供应商(内置 8 家)· 技能 / MCP / 插件 · 自动更新 · 新手引导"
+    ],
+    "tags": ["基石", "IDE"],
+    "patches": []
+  }
+]
