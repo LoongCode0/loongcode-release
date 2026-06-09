@@ -1,9 +1,9 @@
 import { Config } from "@remotion/cli/config";
 
-Config.setVideoImageFormat("jpeg");
+Config.setVideoImageFormat("png"); // 无损中间帧：截图文字更锐利（替代 JPEG）
 Config.setPixelFormat("yuv420p");
 Config.setCodec("h264");
-Config.setCrf(18); // 高画质
+Config.setCrf(14); // 更高码率/更清晰（数值越低越清晰，文件略大）
 Config.setConcurrency(null); // 自动用满核心
 
 // 本机已装 Chrome；复用系统 Chrome，避免在受限网络下载无头 Shell。

@@ -20,6 +20,8 @@ const SHOTS: {
 ];
 
 const PER = 95;
+const DESKTOP_AR = 3840 / 2064;
+const MOBILE_AR = 1080 / 2376;
 
 export const Showcase: React.FC = () => {
   const f = useCurrentFrame();
@@ -29,8 +31,7 @@ export const Showcase: React.FC = () => {
   const exit = Math.max(0, (sp - 0.82) / 0.18);
   const op = enter * (1 - exit);
   const y = (1 - enter) * 70 - exit * 70;
-  const kb = 1.02 + 0.05 * sp;
-  const panX = (sp - 0.5) * 16;
+  const zoom = 1.3 + 0.16 * sp; // 缓慢推进，主内容更大更清晰
   const captionP = Math.min(1, Math.max(0, (sp - 0.12) / 0.2)) * (1 - exit);
   const drift = Math.sin(f / 55) * 22;
   const s = SHOTS[idx];
@@ -68,11 +69,14 @@ export const Showcase: React.FC = () => {
       <div style={{ opacity: op, transform: `translateY(${y}px)` }}>
         <Framed
           src={s.src}
-          width={s.phone ? 540 : 980}
+          width={s.phone ? 540 : 1000}
+          height={s.phone ? 1188 : 600}
+          ar={s.phone ? MOBILE_AR : DESKTOP_AR}
           radius={s.phone ? 38 : 18}
-          tilt={enter}
-          imgScale={s.phone ? 1 : kb}
-          panX={s.phone ? 0 : panX}
+          tilt={s.phone ? 0 : enter}
+          zoom={s.phone ? 1 : zoom}
+          fx={0.5}
+          fy={s.phone ? 0.5 : 0.46}
         />
       </div>
       <div style={{ position: "absolute", bottom: 188, width: "84%" }}>

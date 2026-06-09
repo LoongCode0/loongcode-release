@@ -55,9 +55,12 @@ export const Transform: React.FC = () => {
       >
         <Framed
           src="shots/01-chat.png"
-          width={948}
+          width={1000}
+          height={600}
+          ar={3840 / 2064}
           tilt={burst * 0.5}
-          imgScale={1 + 0.04 * burst}
+          zoom={1.18 + 0.16 * burst}
+          fy={0.46}
         />
       </div>
       <div
