@@ -1,3 +1,5 @@
 node_modules/
-out/
+out/*
+!out/poster.png
+!out/loongcode-promo.mp4
 .DS_Store

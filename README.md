@@ -14,6 +14,18 @@
 
 </div>
 
+<div align="center">
+
+### 🎬 宣传片 · 看 LoongCode 跑起来
+
+<a href="promo-video/out/loongcode-promo.mp4">
+  <img src="promo-video/out/poster.png" alt="▶ 点击观看 LoongCode 宣传片" width="300" />
+</a>
+
+<sub>▶ 点击封面播放 · 竖屏 · 约 47 秒(GitHub 会用内置播放器打开)</sub>
+
+</div>
+
 > 📦 **这里是 LoongCode 的官方发布仓库。** 它提供各平台安装包下载，并作为应用「自动更新」的下载源（`latest.json`）。如需源码与开发说明，请前往项目主仓库。
 
 > 📈 **版本时间线 / 后续规划**：**<https://loongcode0.github.io/loongcode-release/>** —— 以时间线展示各版本已完成功能摘要，以及后续规划（Codex 接入 / Workflow / Agent Team 等）。
