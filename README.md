@@ -18,11 +18,11 @@
 
 ### 🎬 宣传片 · 看 LoongCode 跑起来
 
-<a href="promo-video/out/loongcode-promo.mp4">
-  <img src="promo-video/out/poster.png" alt="▶ 点击观看 LoongCode 宣传片" width="300" />
-</a>
 
-<sub>▶ 点击封面播放 · 竖屏 · 约 47 秒(GitHub 会用内置播放器打开)</sub>
+
+https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
+
+
 
 </div>
 
