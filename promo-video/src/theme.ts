@@ -34,10 +34,11 @@ export const FONT = {
 
 // 全片帧时间轴常量（30fps）
 export const FPS = 30;
-export const TOTAL = 1740;
+export const TOTAL = 1410;
 export const SCENES = {
-  coldOpen: { from: 0, dur: 300 },
-  transform: { from: 300, dur: 360 },
-  features: { from: 660, dur: 840 },
-  cta: { from: 1500, dur: 240 },
+  coldOpen: { from: 0, dur: 210 },
+  transform: { from: 210, dur: 240 },
+  showcase: { from: 450, dur: 475 },
+  features: { from: 925, dur: 285 },
+  cta: { from: 1210, dur: 200 },
 } as const;

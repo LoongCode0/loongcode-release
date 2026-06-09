@@ -9,17 +9,17 @@ import { COLORS, GRAD, FONT, GLOW } from "../theme";
 
 export const CTA: React.FC = () => {
   const f = useCurrentFrame();
-  const reveal = prog(f, 0, 70);
-  const wm = prog(f, 40, 110);
-  const slogan = prog(f, 70, 140);
-  const cta = prog(f, 100, 165);
+  const reveal = prog(f, 0, 60);
+  const wm = prog(f, 35, 95);
+  const slogan = prog(f, 60, 120);
+  const cta = prog(f, 90, 150);
   const float = Math.sin(f / 22) * 6;
   return (
     <AbsoluteFill
       style={{
         alignItems: "center",
         justifyContent: "center",
-        opacity: prog(f, 0, 12), // 只淡入，结尾保持
+        opacity: prog(f, 0, 8), // 只淡入，结尾保持
       }}
     >
       <div

@@ -7,18 +7,15 @@ import { sceneFade } from "../util/anim";
 import { COLORS, FONT, SCENES } from "../theme";
 
 const FEATURES: { icon: IconName; zh: string; en: string }[] = [
-  { icon: "layout", zh: "多会话并行 · 分屏自由平铺", en: "Parallel sessions, split-pane tiling" },
-  { icon: "tools", zh: "终端 · 文件树 · Git · 代码编辑，全内置", en: "Terminal · Files · Git · Editor, built in" },
-  { icon: "puzzle", zh: "MCP · 插件 · 技能 · 子智能体", en: "MCP · Plugins · Skills · Subagents" },
-  { icon: "swap", zh: "自由切换模型供应商", en: "Swap model providers freely" },
-  { icon: "phone", zh: "微信 / 飞书 · 手机远程驱动任务", en: "Drive tasks from your phone" },
-  { icon: "refresh", zh: "Windows · macOS · 内置自动更新", en: "Cross-platform, auto-updating" },
+  { icon: "refresh", zh: "跨平台 · Windows / macOS · 自动更新", en: "Cross-platform, auto-updating" },
+  { icon: "swap", zh: "任务归档 · 历史精确还原 · 会话分叉", en: "Archive, restore & fork sessions" },
+  { icon: "layout", zh: "8 套主题 · 无边框透明 · 新手引导", en: "8 themes, frameless UI, onboarding" },
 ];
 
 export const Features: React.FC = () => {
   const f = useCurrentFrame();
-  const idx = Math.min(FEATURES.length - 1, Math.floor(f / 140));
-  const cardProg = (f - idx * 140) / 140;
+  const idx = Math.min(FEATURES.length - 1, Math.floor(f / 95));
+  const cardProg = (f - idx * 95) / 95;
   const drift = Math.sin(f / 60) * 30;
   return (
     <AbsoluteFill

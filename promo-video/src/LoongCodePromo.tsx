@@ -3,6 +3,7 @@ import { AbsoluteFill, Sequence } from "remotion";
 import { GradientBG } from "./components/GradientBG";
 import { ColdOpen } from "./scenes/ColdOpen";
 import { Transform } from "./scenes/Transform";
+import { Showcase } from "./scenes/Showcase";
 import { Features } from "./scenes/Features";
 import { CTA } from "./scenes/CTA";
 import { SCENES } from "./theme";
@@ -17,6 +18,9 @@ export const LoongCodePromo: React.FC = () => (
     </Sequence>
     <Sequence from={SCENES.transform.from} durationInFrames={SCENES.transform.dur}>
       <Transform />
+    </Sequence>
+    <Sequence from={SCENES.showcase.from} durationInFrames={SCENES.showcase.dur}>
+      <Showcase />
     </Sequence>
     <Sequence from={SCENES.features.from} durationInFrames={SCENES.features.dur}>
       <Features />

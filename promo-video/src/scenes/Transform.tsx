@@ -1,6 +1,6 @@
 import React from "react";
 import { AbsoluteFill, useCurrentFrame, interpolate } from "remotion";
-import { FakeIDE } from "../components/FakeIDE";
+import { Framed } from "../components/Framed";
 import { CodeRain } from "../components/CodeRain";
 import { BilingualTitle } from "../components/BilingualTitle";
 import { prog, fade, sceneFade } from "../util/anim";
@@ -8,13 +8,12 @@ import { COLORS, FONT, SCENES } from "../theme";
 
 export const Transform: React.FC = () => {
   const f = useCurrentFrame();
-  const typed = "▸ claude".slice(0, Math.floor(prog(f, 10, 80) * 8));
+  const typed = "▸ claude".slice(0, Math.floor(prog(f, 8, 55) * 8));
   const blink = Math.floor(f / 12) % 2 === 0;
-  const burst = prog(f, 90, 180);
-  const assemble = prog(f, 120, 300);
-  const rain = fade(f, 90, 110, 170, 200) * 0.16;
-  const titleP = prog(f, 255, 320);
-  const showTerminal = f < 150;
+  const burst = prog(f, 65, 135);
+  const rain = fade(f, 65, 85, 130, 155) * 0.16;
+  const titleP = prog(f, 170, 225);
+  const showTerminal = f < 115;
   return (
     <AbsoluteFill
       style={{
@@ -46,13 +45,25 @@ export const Transform: React.FC = () => {
           </span>
         </div>
       )}
-      <div style={{ opacity: burst, transform: `scale(${0.9 + burst * 0.1})` }}>
-        <FakeIDE assemble={assemble} />
+      {/* 终端炸开 → 揭示真实主界面 */}
+      <div
+        style={{
+          opacity: burst,
+          transform: `translateY(${(1 - burst) * 30}px) scale(${0.92 + burst * 0.08})`,
+          marginTop: -40,
+        }}
+      >
+        <Framed
+          src="shots/01-chat.png"
+          width={948}
+          tilt={burst * 0.5}
+          imgScale={1 + 0.04 * burst}
+        />
       </div>
       <div
         style={{
           position: "absolute",
-          bottom: 180,
+          bottom: 150,
           width: "86%",
           display: "flex",
           flexDirection: "column",
@@ -64,8 +75,8 @@ export const Transform: React.FC = () => {
           zh="把 Agentic CLI 装进桌面"
           en="Bring agentic CLIs into a desktop GUI"
           progress={titleP}
-          zhSize={62}
-          enSize={28}
+          zhSize={60}
+          enSize={27}
           gold
         />
         <div
@@ -75,7 +86,7 @@ export const Transform: React.FC = () => {
               extrapolateRight: "clamp",
             }),
             fontFamily: FONT.zh,
-            fontSize: 24,
+            fontSize: 23,
             color: COLORS.text3,
             textAlign: "center",
           }}

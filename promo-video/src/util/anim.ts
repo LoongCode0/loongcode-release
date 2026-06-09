@@ -28,7 +28,7 @@ export function prog(frame: number, start: number, end: number): number {
 
 // 幕级淡入淡出包络：起止各 edge 帧渐变。底层 GradientBG 常驻，
 // 淡出时露出氛围背景，形成干净的章节转场。
-export function sceneFade(frame: number, dur: number, edge = 12): number {
+export function sceneFade(frame: number, dur: number, edge = 8): number {
   return interpolate(frame, [0, edge, dur - edge, dur], [0, 1, 1, 0], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",

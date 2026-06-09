@@ -8,10 +8,10 @@ import { COLORS, FONT, SCENES } from "../theme";
 
 export const ColdOpen: React.FC = () => {
   const f = useCurrentFrame();
-  const gather = prog(f, 0, 110);
-  const reveal = prog(f, 80, 180);
-  const shimmer = prog(f, 110, 210);
-  const titleP = prog(f, 150, 250);
+  const gather = prog(f, 0, 70);
+  const reveal = prog(f, 50, 125);
+  const shimmer = prog(f, 75, 160);
+  const titleP = prog(f, 105, 170);
   const float = Math.sin(f / 20) * 6;
   return (
     <AbsoluteFill
