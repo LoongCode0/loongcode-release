@@ -20,11 +20,20 @@ pnpm test           # vitest（rng 可复现性单测）
 > 渲染复用**系统 Chrome**（`remotion.config.ts` 已指向 `C:\Program Files\Google\Chrome\Application\chrome.exe`，避免在受限网络下载无头 Shell）。
 > 换机器或路径：设置环境变量 `REMOTION_BROWSER` 覆盖，或改 `remotion.config.ts`。
 
-## 加配乐
+## 配乐（程序化生成）
 
-1. 把音频放到 `public/music.mp3`。
-2. 在 `src/LoongCodePromo.tsx` 里取消 `<Audio src={staticFile("music.mp3")} />` 的注释。
-3. 重新 `pnpm render`。视觉已在每幕边界自带节拍卡点，静音也成立。
+配乐由脚本按视频时间轴合成（暗黑电影感，卡四幕 + 切屏节点），已用 `<Audio>` 接入：
+
+```bash
+python bin/gen_audio.py                                  # numpy 合成 → out/loongcode-promo.wav
+ffmpeg -y -i out/loongcode-promo.wav -q:a 2 public/music.mp3   # 转 mp3 供 Remotion <Audio>
+pnpm render                                              # 渲染并嵌入音频
+```
+
+- 依赖 `numpy`（`uv pip install numpy` 或 `pip install numpy`）。
+- 改配乐：编辑 `bin/gen_audio.py` 顶部的 `SECTIONS`（和声时段）/ `ACCENTS`（冲击）/ `TICKS`（切屏点）。
+- 想用自己的音乐：直接替换 `public/music.mp3` 即可（跳过脚本）。
+- 不想重渲：可用 ffmpeg 把 wav 直接合成进现有 mp4（`-c:v copy -c:a aac -shortest`）。视觉已自带节拍卡点，静音也成立。
 
 ## 结构
 

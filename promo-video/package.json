@@ -6,7 +6,7 @@
   "scripts": {
     "preview": "remotion studio",
     "render": "remotion render LoongCodePromo out/loongcode-promo.mp4 --codec=h264",
-    "poster": "remotion still LoongCodePromo out/poster.png --frame=1380",
+    "poster": "remotion still LoongCodePromo out/poster.png --frame=435",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"
   },

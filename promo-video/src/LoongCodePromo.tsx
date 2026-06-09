@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Sequence } from "remotion";
+import { AbsoluteFill, Audio, Sequence, staticFile } from "remotion";
 import { GradientBG } from "./components/GradientBG";
 import { ColdOpen } from "./scenes/ColdOpen";
 import { Transform } from "./scenes/Transform";
@@ -12,7 +12,7 @@ import "./util/fonts"; // 触发字体加载
 export const LoongCodePromo: React.FC = () => (
   <AbsoluteFill>
     <GradientBG />
-    {/* <Audio src={staticFile("music.mp3")} /> 放入 public/music.mp3 后启用 */}
+    <Audio src={staticFile("music.mp3")} />{/* 由 bin/gen_audio.py 生成 */}
     <Sequence from={SCENES.coldOpen.from} durationInFrames={SCENES.coldOpen.dur}>
       <ColdOpen />
     </Sequence>
