@@ -5,17 +5,29 @@
     "date": "待排期",
     "title": "规划方向（未排期）",
     "summary": [
-      "Codex 接入 —— 继 Claude Code 后接入更多 CLI 工具",
       "Workflow 工作流编排支持",
       "Agent Team 多智能体团队协作"
     ],
-    "tags": ["Codex", "Workflow", "Agent Team"],
+    "tags": ["Workflow", "Agent Team"],
     "patches": [],
     "fullNotesUrl": null
   },
   {
-    "version": "0.6.0",
+    "version": "0.7.0",
     "status": "latest",
+    "date": "2026-06-12",
+    "title": "接入 OpenAI Codex · 多 CLI 支持",
+    "summary": [
+      "接入 OpenAI Codex CLI：任务可在 Claude / Codex 间切换，流式 / 审批 / 中断 / 历史还原 / 子智能体 / 分叉全对齐",
+      "Codex 一键安装 + 技能 / 插件 / MCP / 子智能体设置面板 + Codex OAuth 原生模型档位",
+      "左侧栏可折叠 · 运行时长指示 · 修复 Windows 中文输入法主线程死锁"
+    ],
+    "tags": ["Codex", "多 CLI", "Rust"],
+    "patches": []
+  },
+  {
+    "version": "0.6.0",
+    "status": "released",
     "date": "2026-06-09",
     "title": "飞书机器人接入 · 分屏对话",
     "summary": [
