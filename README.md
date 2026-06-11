@@ -6,7 +6,7 @@
 
 将 Claude Code CLI 包裹进一个现代化的桌面工作台 —— 多会话对话、集成终端、文件树、Git Review、命令 / 文件面板，以及 MCP、插件、技能、模型供应商的可视化管理，开箱即用。
 
-![version](https://img.shields.io/badge/version-0.6.4-6d5efc)
+![version](https://img.shields.io/badge/version-0.6.5-6d5efc)
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-444)
 ![built with](https://img.shields.io/badge/built%20with-Tauri%202%20%2B%20React%2019-2f6df6)
 
@@ -69,7 +69,7 @@ https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
 
 ### 输入（Composer）
 - **斜杠命令面板**（`/command`）与 **@ 文件提及面板**、内联文件 chip。
-- **图片输入**、**每任务独立草稿**、**模型 / 推理强度选择器**、可自定义的输入工具栏。
+- **图片输入**、**每任务独立草稿**、**模型 / 推理强度选择器**（Claude 登录内置 **Fable** / Opus / Sonnet / Haiku 档位）、可自定义的输入工具栏。
 
 ### 集成开发工具
 - **集成终端** —— 基于 xterm.js + PTY 的真实终端。
@@ -145,6 +145,7 @@ LoongCode 运行需要两个**必备依赖**：
 - 代理环境下，可在该面板为依赖单独配置 http / https 代理后再安装。
 - 「可选依赖」`uv` / `pnpm` / `bun` 同样支持一键安装与多版本切换。
 - **Claude Code CLI 安装来源可选** —— 官方安装脚本 / GitHub 直连 / GitHub 镜像加速(镜像前缀可自定义),应对官方源在部分网络环境下不可达。
+- **Git 安装来源可选(Windows)** —— GitHub 直连 / 镜像加速(镜像前缀可自定义),便携版 PortableGit 在网络受限环境下也能顺利装上。
 
 > ⚠️ 应用只能帮你把 Claude Code CLI **装好**，**登录仍需自行完成**：在集成终端运行 `claude` 按提示登录，或在 **设置 →「模型供应商」** 配置你的后端。
 
