@@ -23,7 +23,9 @@
       "左侧栏可折叠 · 运行时长指示 · 修复 Windows 中文输入法主线程死锁"
     ],
     "tags": ["Codex", "多 CLI", "Rust"],
-    "patches": []
+    "patches": [
+      { "version": "0.7.1", "note": "Codex 内置中转（Responses⇄Chat）· curated 市场 git 下载 · 依赖安装进度与刷新优化" }
+    ]
   },
   {
     "version": "0.6.0",
