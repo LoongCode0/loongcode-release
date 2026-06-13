@@ -11,8 +11,12 @@
 ![built with](https://img.shields.io/badge/built%20with-Tauri%202%20%2B%20React%2019-2f6df6)
 
 [![版本时间线](https://img.shields.io/badge/%E7%89%88%E6%9C%AC%E6%97%B6%E9%97%B4%E7%BA%BF-%E5%9C%A8%E7%BA%BF%E6%9F%A5%E7%9C%8B-6d5efc)](https://loongcode0.github.io/loongcode-release/)
+[![使用指南](https://img.shields.io/badge/%F0%9F%93%96%20%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E7%82%B9%E6%AD%A4%E6%9F%A5%E9%98%85-0ea5e9?style=flat&labelColor=0f172a)](https://loongcode0.github.io/docs)
 
 </div>
+
+> **[📖 查看完整使用指南 →](https://loongcode0.github.io/docs)**　了解所有功能、配置技巧与最佳实践。
+
 
 <div align="center">
 

@@ -7,6 +7,10 @@
     "preview": "remotion studio",
     "render": "remotion render LoongCodePromo out/loongcode-promo.mp4 --codec=h264",
     "poster": "remotion still LoongCodePromo out/poster.png --frame=435",
+    "xhs:cover": "remotion still XhsCover out/xhs/01-cover.png --frame=0",
+    "xhs:features": "remotion still XhsFeatures out/xhs/02-features.png --frame=0",
+    "xhs:compare": "remotion still XhsCompare out/xhs/03-compare.png --frame=0",
+    "xhs": "pnpm xhs:cover && pnpm xhs:features && pnpm xhs:compare",
     "typecheck": "tsc --noEmit",
     "test": "vitest run"
   },
