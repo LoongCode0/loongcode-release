@@ -6,7 +6,7 @@
 
 将 Claude Code CLI 包裹进一个现代化的桌面工作台 —— 多会话对话、集成终端、文件树、Git Review、命令 / 文件面板，以及 MCP、插件、技能、模型供应商的可视化管理，开箱即用。
 
-![version](https://img.shields.io/badge/version-0.7.1-6d5efc)
+![version](https://img.shields.io/badge/version-0.7.2-6d5efc)
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-444)
 ![built with](https://img.shields.io/badge/built%20with-Tauri%202%20%2B%20React%2019-2f6df6)
 
@@ -64,6 +64,8 @@ https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
 - **会话分叉 / 优雅中断 / 重跑** —— 从任意历史节点 fork 出新会话；点「停止」等价于按 ESC 优雅中断，保留已生成内容、可继续对话。
 - **编辑历史用户消息**，并从该点继续。
 - **子 Agent 子对话** —— 子 Agent 的对话被路由进独立的折叠卡片，主线清晰不打架。
+- **Claude 动态工作流可视化** —— 发现并触发 Claude Code 动态工作流（用户 / 项目 `.claude/workflows/*.js`），运行进度渲染成富进度卡：阶段分组（运行中自动展开 / 空闲自动收缩）、子智能体下钻查看 transcript、用量与结果一目了然，应用重启后还能从磁盘重建卡片。
+- **定时执行消息** —— 给任务设定时发送：支持指定时间 / 间隔 / 每日 / Cron 四种模式，内置免依赖的日期时间选择器，草稿态任务也能预约；定时状态用紫色指示灯呈现，可在全局总览里集中查看与管理。
 - **移动端支持（微信 ClawBot / 飞书 Lark）** —— 绑定微信官方 ClawBot 或飞书机器人后，用手机即可远程新建 / 驱动任务、接收 AI 回复，连交互式提问（AskUserQuestion）也能回数字作答。飞书渠道为**原生 Rust 长连接**实现：扫码建应用绑定、私聊全转发 / 群里 @ 机器人触发、连接健康指示灯（绿 / 黄 / 灰），网络波动自动重连且不丢凭据。
 
 ### 对话体验
