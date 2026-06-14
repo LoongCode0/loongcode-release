@@ -6,7 +6,7 @@
 
 将 Claude Code CLI 包裹进一个现代化的桌面工作台 —— 多会话对话、集成终端、文件树、Git Review、命令 / 文件面板，以及 MCP、插件、技能、模型供应商的可视化管理，开箱即用。
 
-![version](https://img.shields.io/badge/version-0.7.2-6d5efc)
+![version](https://img.shields.io/badge/version-0.7.3-6d5efc)
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-444)
 ![built with](https://img.shields.io/badge/built%20with-Tauri%202%20%2B%20React%2019-2f6df6)
 
@@ -98,7 +98,7 @@ https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
 - **全应用自定义右键菜单** —— 对话区、预览、文件树、任务行、侧边栏空白处都有贴合场景的右键菜单，替换系统默认菜单。
 - **后台任务栏提醒** —— 窗口不在前台（含最小化）时，AI 完成 / 失败 / 弹出确认请求会像 QQ / 微信那样闪烁任务栏图标。
 - **新建任务记住上次配置** —— 新建任务 / 技能自动继承上一次使用的模型供应商与参数。
-- **无边框透明窗口** + 亚克力 / vibrancy 模糊，失败时优雅降级。
+- **原生窗口装饰（macOS）** —— macOS 采用系统原生 Overlay 标题栏与三键（红黄绿）按钮，侧边栏头部为原生三键预留安全区，并支持刘海屏全屏安全区；Windows 维持无边框定制窗口。
 - **深色主题**、蓝紫渐变视觉、金色 wordmark。
 - **界面语言（中 / 英）** —— 整个图形界面支持中英文切换，默认跟随系统语言、识别不到时回退英语，可在「设置 → 常规」随时切换；AI 对话内容不受影响。
 - **中 / 英文安装界面**，安装时可选语言。

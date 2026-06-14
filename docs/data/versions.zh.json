@@ -25,7 +25,8 @@
     "tags": ["Codex", "多 CLI", "Rust"],
     "patches": [
       { "version": "0.7.1", "note": "Codex 内置中转（Responses⇄Chat）· curated 市场 git 下载 · 依赖安装进度与刷新优化" },
-      { "version": "0.7.2", "note": "Claude 动态工作流富进度卡（阶段 / 子智能体下钻）· 定时执行消息 · 删任务 / 工作区异步化消除冻屏" }
+      { "version": "0.7.2", "note": "Claude 动态工作流富进度卡（阶段 / 子智能体下钻）· 定时执行消息 · 删任务 / 工作区异步化消除冻屏" },
+      { "version": "0.7.3", "note": "macOS 原生窗口装饰（Overlay 标题栏 + 原生三键 + 刘海屏全屏安全区）· git 一键安装持久化 PATH · 后台 Bash 不再误卡运行中" }
     ]
   },
   {
