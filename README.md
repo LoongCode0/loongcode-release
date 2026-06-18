@@ -32,7 +32,7 @@ https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
 
 > 📦 **这里是 LoongCode 的官方发布仓库。** 它提供各平台安装包下载，并作为应用「自动更新」的下载源（`latest.json`）。如需源码与开发说明，请前往项目主仓库。
 
-> 📈 **版本时间线 / 后续规划**：**<https://loongcode0.github.io/loongcode-release/>** —— 以时间线展示各版本已完成功能摘要，以及后续规划（Workflow / Agent Team 等）。
+> 📈 **版本时间线 / 后续规划**：**<https://loongcode0.github.io/loongcode-release/>** —— 以时间线展示各版本已完成功能摘要，以及后续规划（移动端原生 App / Agent Team 等）。
 
 ---
 

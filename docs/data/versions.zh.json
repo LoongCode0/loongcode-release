@@ -5,10 +5,10 @@
     "date": "待排期",
     "title": "规划方向（未排期）",
     "summary": [
-      "Workflow 工作流编排支持",
+      "移动端原生 App（iOS / Android）",
       "Agent Team 多智能体团队协作"
     ],
-    "tags": ["Workflow", "Agent Team"],
+    "tags": ["移动端 App", "Agent Team"],
     "patches": [],
     "fullNotesUrl": null
   },
