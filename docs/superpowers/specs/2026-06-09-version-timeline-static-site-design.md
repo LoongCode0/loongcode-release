@@ -22,7 +22,7 @@
 
 - 纯 `HTML + CSS + 原生 JS`,无框架、无打包、无构建步骤。
 - 站点位于本仓库 `docs/` 目录;GitHub Pages 设为「**从分支 `main` 的 `/docs` 目录**发布」。
-- 访问地址:`https://loongcode0.github.io/loongcode-release/`
+- 访问地址:`https://release.loongcode.cc`
 - 加 `docs/.nojekyll` 空文件,禁用 GitHub Pages 的 Jekyll 处理,确保纯静态资源按原样服务。
 - 内容与代码分离:页面渲染逻辑读取 JSON 数据文件,**新增版本 = 改一行 JSON,不碰代码**。
 
@@ -176,7 +176,7 @@ docs/
 1. 站点文件提交到 `main` 分支 `docs/`。
 2. GitHub 仓库 Settings → Pages → Source 选「Deploy from a branch」,分支 `main`、目录 `/docs`。
 3. `docs/.nojekyll` 保证纯静态服务。
-4. 访问 `https://loongcode0.github.io/loongcode-release/` 验证。
+4. 访问 `https://release.loongcode.cc` 验证。
 
 ## 10. 日常维护
 

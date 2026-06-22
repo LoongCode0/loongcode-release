@@ -6,16 +6,16 @@
 
 将 Claude Code CLI 包裹进一个现代化的桌面工作台 —— 多会话对话、集成终端、文件树、Git Review、命令 / 文件面板，以及 MCP、插件、技能、模型供应商的可视化管理，开箱即用。
 
-![version](https://img.shields.io/badge/version-0.7.3-6d5efc)
+![version](https://img.shields.io/badge/version-0.8.0-6d5efc)
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-444)
 ![built with](https://img.shields.io/badge/built%20with-Tauri%202%20%2B%20React%2019-2f6df6)
 
-[![版本时间线](https://img.shields.io/badge/%E7%89%88%E6%9C%AC%E6%97%B6%E9%97%B4%E7%BA%BF-%E5%9C%A8%E7%BA%BF%E6%9F%A5%E7%9C%8B-6d5efc)](https://loongcode0.github.io/loongcode-release/)
-[![使用指南](https://img.shields.io/badge/%F0%9F%93%96%20%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E7%82%B9%E6%AD%A4%E6%9F%A5%E9%98%85-0ea5e9?style=flat&labelColor=0f172a)](https://loongcode0.github.io/docs)
+[![版本时间线](https://img.shields.io/badge/%E7%89%88%E6%9C%AC%E6%97%B6%E9%97%B4%E7%BA%BF-%E5%9C%A8%E7%BA%BF%E6%9F%A5%E7%9C%8B-6d5efc)](https://release.loongcode.cc)
+[![使用指南](https://img.shields.io/badge/%F0%9F%93%96%20%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E7%82%B9%E6%AD%A4%E6%9F%A5%E9%98%85-0ea5e9?style=flat&labelColor=0f172a)](https://docs.loongcode.cc)
 
 </div>
 
-> **[📖 查看完整使用指南 →](https://loongcode0.github.io/docs)**　了解所有功能、配置技巧与最佳实践。
+> **[📖 查看完整使用指南 →](https://docs.loongcode.cc)**　了解所有功能、配置技巧与最佳实践。
 
 
 <div align="center">
@@ -32,7 +32,7 @@ https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
 
 > 📦 **这里是 LoongCode 的官方发布仓库。** 它提供各平台安装包下载，并作为应用「自动更新」的下载源（`latest.json`）。如需源码与开发说明，请前往项目主仓库。
 
-> 📈 **版本时间线 / 后续规划**：**<https://loongcode0.github.io/loongcode-release/>** —— 以时间线展示各版本已完成功能摘要，以及后续规划（移动端原生 App / Agent Team 等）。
+> 📈 **版本时间线 / 后续规划**：**<https://release.loongcode.cc>** —— 以时间线展示各版本已完成功能摘要，以及后续规划（移动端原生 App / Agent Team 等）。
 
 ---
 
@@ -56,7 +56,7 @@ https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
 
 ### 会话与任务
 - **多 CLI 支持（Claude / OpenAI Codex）** —— 任务可在 **Claude Code** 与 **OpenAI Codex** 两个 CLI 家族之间按需切换（每个任务 / 草稿单独选择，配置各记各的）。Codex 任务获得与 Claude 对齐的完整体验：对话**流式输出**、**交互式审批 + 优雅中断**、**历史还原**、**子智能体子卡片**、**会话分叉**，以及技能 / 插件 / MCP / 模型供应商的可视化管理；底层经 `codex app-server` 持久长连接驱动，每任务一进程、懒启动、空闲回收。
-- **多工作区 / 多任务管理** —— 每个任务都是一个独立、可恢复的会话；任务列表按最近活动排序，在用的任务自动浮上来。
+- **多工作区 / 多任务管理** —— 每个任务都是一个独立、可恢复的会话；任务列表按最近活动排序，在用的任务自动浮上来；选中任务时自动展开并聚焦其所在分组（工作区 / 置顶 / 时间线日期桶）。
 - **分屏对话（多分栏）** —— 主区可把对话切成多个分栏（左右 / 上下递归平铺、分割线可拖、可关闭塌缩、**拖分栏标题可停靠 / 交换重排**），每个分栏是一个完整对话或新建草稿，可**跨工作区自由混排**；选中分栏时侧栏 / 文件 / 终端 / Git 自动跟随，布局会被记住，误关可 `Ctrl+Shift+T` 撤销。
 - **任务归档** —— 不再活跃的任务可手动（下拉 / 右键）或按最近活动时间自动归档，收纳进独立的「归档视图」，主列表更清爽；自动归档可在设置里开关与调阈值（小时 / 天 / 月），运行中 / 置顶任务受保护。
 - **新建任务草稿态** —— 点「新建」先进入草稿，内联挑选工作区 / 模型 / Git 分支或 worktree，发送首条消息才正式创建任务（`Ctrl+N` 快捷新建，默认选上次用过的工作区）。
@@ -67,6 +67,7 @@ https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
 - **Claude 动态工作流可视化** —— 发现并触发 Claude Code 动态工作流（用户 / 项目 `.claude/workflows/*.js`），运行进度渲染成富进度卡：阶段分组（运行中自动展开 / 空闲自动收缩）、子智能体下钻查看 transcript、用量与结果一目了然，应用重启后还能从磁盘重建卡片。
 - **定时执行消息** —— 给任务设定时发送：支持指定时间 / 间隔 / 每日 / Cron 四种模式，内置免依赖的日期时间选择器，草稿态任务也能预约；定时状态用紫色指示灯呈现，可在全局总览里集中查看与管理。
 - **移动端支持（微信 ClawBot / 飞书 Lark）** —— 绑定微信官方 ClawBot 或飞书机器人后，用手机即可远程新建 / 驱动任务、接收 AI 回复，连交互式提问（AskUserQuestion）也能回数字作答。飞书渠道为**原生 Rust 长连接**实现：扫码建应用绑定、私聊全转发 / 群里 @ 机器人触发、连接健康指示灯（绿 / 黄 / 灰），网络波动自动重连且不丢凭据。
+- **PC 远程桥接（移动端伴侣）** —— 用手机扫码与桌面配对后，经**加密中转**与桌面建立可靠双向连接，把桌面任务搬到手机上远程驱动：实时收发对话消息、历史回放、按任务路由、优雅中断，输入框同样支持 **/命令 · @文件 · 图片**等富输入。桌面**四件套配置（模型 / 推理强度 / 权限 / CLI）双向同步**——本地改动回推 App、远程改动落库桌面；交互式提问与权限请求**单点作答**，两端实时保持一致。底层为**原生 Rust** 实现：ECDH 配对 + 端到端加密、断线自动重连重发不丢包、应用层心跳保活与假在线检测。
 
 ### 对话体验
 - **富文本消息气泡** —— Markdown 渲染、表格、代码语法高亮、Markdown 预览。
@@ -79,7 +80,7 @@ https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
 - **图片输入**、**每任务独立草稿**、**模型 / 推理强度选择器**（Claude 登录内置 **Fable** / Opus / Sonnet / Haiku 档位；Codex 登录内置 **Codex OAuth** 原生档位与 minimal～xhigh 推理强度，模型下拉按当前 CLI 家族过滤）、可自定义的输入工具栏。
 
 ### 集成开发工具
-- **集成终端** —— 基于 xterm.js + PTY 的真实终端。
+- **集成终端** —— 基于 xterm.js + PTY 的真实终端；终端日志里的链接可点击（左键在内嵌浏览器打开、右键调系统浏览器或复制地址）。
 - **文件树侧栏 + 侧边文件面板 + Monaco 编辑器** —— 浏览、查看代码与 Diff。
 - **文件树多选与文件操作** —— 单击选中 / 拖拽框选，复制 / 剪切 / 粘贴（接入系统文件剪贴板，与资源管理器互通）、新建 / 重命名 / 删除，支持 `Del` 与 `Ctrl+C/X/V` 快捷键。
 - **Git 工作流** —— 分支切换、变更 Review 面板、提交菜单（含 ✨ 一键生成提交消息）、worktree 自动检测与跟随。

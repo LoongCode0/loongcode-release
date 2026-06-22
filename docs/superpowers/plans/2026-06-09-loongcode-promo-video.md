@@ -1082,7 +1082,7 @@ export const CTA: React.FC = () => {
             <GlowPill label="macOS" variant="ghost" />
             <GlowPill label="自动更新 Auto-update" variant="ghost" />
           </div>
-          <div style={{ fontFamily: FONT.en, fontSize: 22, color: COLORS.text3, marginTop: 6 }}>loongcode0.github.io/loongcode-release</div>
+          <div style={{ fontFamily: FONT.en, fontSize: 22, color: COLORS.text3, marginTop: 6 }}>release.loongcode.cc</div>
         </div>
       </div>
     </AbsoluteFill>

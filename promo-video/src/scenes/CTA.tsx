@@ -81,7 +81,7 @@ export const CTA: React.FC = () => {
               marginTop: 6,
             }}
           >
-            loongcode0.github.io/loongcode-release
+            release.loongcode.cc
           </div>
         </div>
       </div>

@@ -15,7 +15,7 @@ node bin/serve.mjs        # 然后打开 http://localhost:8080/
 1. 推送本分支并合并到 `main`。
 2. 仓库 Settings → Pages → Build and deployment → Source 选 **Deploy from a branch**。
 3. 分支选 `main`，目录选 **`/docs`**，保存。
-4. 等待发布，访问 `https://loongcode0.github.io/loongcode-release/`。
+4. 等待发布，访问 `https://release.loongcode.cc`。
    `docs/.nojekyll` 已确保纯静态资源按原样服务。
 
 ## 维护
