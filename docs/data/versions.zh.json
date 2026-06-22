@@ -23,7 +23,9 @@
       "终端日志链接可点击（左键开内嵌浏览器 / 右键系统浏览器）· 选中任务自动展开并聚焦所在分组"
     ],
     "tags": ["远程桥接", "移动端", "Rust"],
-    "patches": []
+    "patches": [
+      { "version": "0.8.1", "note": "修复 macOS 旧版 Safari / WKWebView 渲染含邮箱自动链接的 Markdown 时整窗崩溃(autolink lookbehind 正则)" }
+    ]
   },
   {
     "version": "0.7.0",
