@@ -2,9 +2,9 @@
 
 # LoongCode
 
-**把 Claude Code 装进桌面的 AI Agent IDE**
+**把 Claude Code 与 OpenAI Codex 装进桌面的 AI Agent IDE**
 
-将 Claude Code CLI 包裹进一个现代化的桌面工作台 —— 多会话对话、集成终端、文件树、Git Review、命令 / 文件面板，以及 MCP、插件、技能、模型供应商的可视化管理，开箱即用。
+将 Claude Code CLI 与 OpenAI Codex CLI 包裹进一个现代化的桌面工作台 —— 多会话对话、集成终端、文件树、Git Review、命令 / 文件面板，以及 MCP、插件、技能、模型供应商的可视化管理，开箱即用。
 
 ![version](https://img.shields.io/badge/version-0.8.1-6d5efc)
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-444)
@@ -38,29 +38,31 @@ https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
 
 ## LoongCode 是什么
 
-**LoongCode** 是一个基于 **Tauri 2 + React 19** 的跨平台桌面应用，本质上是 **Claude Code CLI 的图形化外壳**。
+**LoongCode** 是一个基于 **Tauri 2 + React 19** 的跨平台桌面 **Agent IDE**，本质上是 **Claude Code、OpenAI Codex 等多套 Agent CLI 的统一图形化外壳**（后续将持续接入更多 CLI）。
 
-它把命令行里的 Agent 编程体验，搬进了一个真正的 IDE 式界面：
+它把原本只能在命令行里使用的 Agent 编程体验，搬进了一个真正的 IDE 式界面：
 
-- 每一个「任务」对应一个独立的 Claude Code 会话；
-- 应用以子进程方式拉起 `claude` CLI，通过 stdin/stdout 以 stream-json 协议通信；
+- 每一个「任务」对应一个独立的 AI 会话，可在 **Claude Code**、**OpenAI Codex** 等多套 CLI 之间按需切换（每个任务单独选择，模型 / 配置各记各的）；
+- 应用以子进程方式拉起本机的 `claude` 或 `codex` CLI，通过流式 JSON 协议与其实时通信；
 - 把事件流实时渲染成对话 UI，并在同一个窗口里集成终端、文件树、Git Review、命令 / 文件面板，以及各类设置。
 
-> ⚠️ **重要：LoongCode 自身不直接调用 Anthropic API。** 所有模型交互都由它拉起的 CLI 子进程完成。因此在使用前，你需要先在本机准备好两个**必备依赖**：已安装并登录的 **Claude Code CLI**，以及 **Git**。
+> 💡 可以这样理解：**CLI 是引擎，LoongCode 是驾驶舱** —— 模型调用、代码执行、文件操作交给 CLI，多任务管理、历史还原、Git 集成等工作流增强交给 LoongCode；两者解耦运行、各自独立升级。
+
+> ⚠️ **重要：LoongCode 自身不直接调用任何模型 API。** 所有模型交互都由它拉起的 CLI 子进程完成，API 密钥与模型配置也由 CLI 自行管理。因此在使用前，你需要先在本机准备好**必备依赖**：已安装并登录的 **Claude Code CLI** 与 **Git**；若想使用 **OpenAI Codex** 家族任务，再额外装上**可选依赖** **Codex CLI** 即可。
 >
-> 👉 没装也不必离开应用：LoongCode 内置**「依赖管理」**面板，可直接一键安装 Claude Code CLI 与 Git（见下方「系统要求」与「🧩 依赖与一键安装」）；登录仍需你在装好后自行完成。
+> 👉 没装也不必离开应用：LoongCode 内置**「依赖管理」**面板，可直接一键安装 Claude Code CLI、Git 与 Codex CLI（见下方「系统要求」与「🧩 依赖与一键安装」）；登录仍需你在装好后自行完成。
 
 ---
 
 ## ✨ 核心功能
 
 ### 会话与任务
-- **多 CLI 支持（Claude / OpenAI Codex）** —— 任务可在 **Claude Code** 与 **OpenAI Codex** 两个 CLI 家族之间按需切换（每个任务 / 草稿单独选择，配置各记各的）。Codex 任务获得与 Claude 对齐的完整体验：对话**流式输出**、**交互式审批 + 优雅中断**、**历史还原**、**子智能体子卡片**、**会话分叉**，以及技能 / 插件 / MCP / 模型供应商的可视化管理；底层经 `codex app-server` 持久长连接驱动，每任务一进程、懒启动、空闲回收。
+- **多 CLI 支持（Claude / OpenAI Codex）** —— 任务可在 **Claude Code**、**OpenAI Codex** 等多个 CLI 家族之间按需切换（每个任务 / 草稿单独选择，配置各记各的）。Codex 任务获得与 Claude 对齐的完整体验：对话**流式输出**、**交互式审批 + 优雅中断**、**历史还原**、**子智能体子卡片**、**会话分叉**，以及技能 / 插件 / MCP / 模型供应商的可视化管理；底层经 `codex app-server` 持久长连接驱动，每任务一进程、懒启动、空闲回收。
 - **多工作区 / 多任务管理** —— 每个任务都是一个独立、可恢复的会话；任务列表按最近活动排序，在用的任务自动浮上来；选中任务时自动展开并聚焦其所在分组（工作区 / 置顶 / 时间线日期桶）。
 - **分屏对话（多分栏）** —— 主区可把对话切成多个分栏（左右 / 上下递归平铺、分割线可拖、可关闭塌缩、**拖分栏标题可停靠 / 交换重排**），每个分栏是一个完整对话或新建草稿，可**跨工作区自由混排**；选中分栏时侧栏 / 文件 / 终端 / Git 自动跟随，布局会被记住，误关可 `Ctrl+Shift+T` 撤销。
 - **任务归档** —— 不再活跃的任务可手动（下拉 / 右键）或按最近活动时间自动归档，收纳进独立的「归档视图」，主列表更清爽；自动归档可在设置里开关与调阈值（小时 / 天 / 月），运行中 / 置顶任务受保护。
 - **新建任务草稿态** —— 点「新建」先进入草稿，内联挑选工作区 / 模型 / Git 分支或 worktree，发送首条消息才正式创建任务（`Ctrl+N` 快捷新建，默认选上次用过的工作区）。
-- **历史精确还原** —— 从 Claude 的会话 JSONL 加上应用侧的 sidecar 还原对话，连用户输入里的文件、命令、图片 chip 身份都能 1:1 复原。
+- **历史精确还原** —— 从 CLI 的原生会话记录（Claude 的 JSONL、Codex 的 rollout）加上应用侧的 sidecar 还原对话，连用户输入里的文件、命令、图片 chip 身份都能 1:1 复原。
 - **会话分叉 / 优雅中断 / 重跑** —— 从任意历史节点 fork 出新会话；点「停止」等价于按 ESC 优雅中断，保留已生成内容、可继续对话。
 - **编辑历史用户消息**，并从该点继续。
 - **子 Agent 子对话** —— 子 Agent 的对话被路由进独立的折叠卡片，主线清晰不打架。
@@ -92,7 +94,7 @@ https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
 - **Model Providers（模型供应商）** 配置，自由切换后端 —— 常见模型内置**上下文窗口出厂默认值**，新增模型时输入框占位符直接给出推荐值（留空也有合理默认）。
 - **依赖管理 + 运行时版本管理** —— 依赖按必须 / 可选分层呈现；**必备依赖 Claude Code CLI 与 Git 支持应用内一键安装**（Windows 直接装好，macOS 的 Git 走系统 Xcode 命令行工具引导）；对 `uv` / `pnpm`（及 `bun`）可列出 / 安装 / 卸载 / 切换多版本，并支持一键兜底安装。
 - **代理设置** —— 支持 http / https 代理（不支持 SOCKS）。
-- **环境变量设置** —— 为 Claude Code CLI 子进程注入自定义环境变量（改动自动触发子进程重启）。
+- **环境变量设置** —— 为 CLI 子进程（Claude / Codex）注入自定义环境变量（改动自动触发子进程重启）。
 - **用量统计（Usage）** —— 直观查看消耗。
 
 ### 桌面体验
@@ -114,6 +116,7 @@ https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
 | --- | --- |
 | **操作系统** | Windows 10/11（x64 / ARM64）、macOS（Apple Silicon 与 Intel，Universal） |
 | **必备依赖** | **Claude Code CLI**（已安装并完成登录 / 配置）与 **Git**；两者均可在应用内一键安装 |
+| **可选依赖** | **OpenAI Codex CLI** —— 想用 Codex 家族任务时安装，同样支持应用内一键安装 |
 | **网络（可选）** | 如需走代理，仅支持 http / https 代理（不支持 SOCKS） |
 
 > 💡 **没装这两个依赖也没关系**：装好 LoongCode 后进入 **设置 →「依赖管理」**，即可一键安装 Claude Code CLI 与 Git，无需手动折腾命令行（详见下方「🧩 依赖与一键安装」）。
@@ -156,16 +159,16 @@ LoongCode 运行需要两个**必备依赖**：
 - **Claude Code CLI 安装来源可选** —— 官方安装脚本 / GitHub 直连 / GitHub 镜像加速(镜像前缀可自定义),应对官方源在部分网络环境下不可达。
 - **Git 安装来源可选(Windows)** —— GitHub 直连 / 镜像加速(镜像前缀可自定义),便携版 PortableGit 在网络受限环境下也能顺利装上。
 
-> ⚠️ 应用只能帮你把 Claude Code CLI **装好**，**登录仍需自行完成**：在集成终端运行 `claude` 按提示登录，或在 **设置 →「模型供应商」** 配置你的后端。
+> ⚠️ 应用只能帮你把 CLI **装好**，**登录仍需自行完成**：在集成终端运行 `claude` / `codex` 按提示登录，或在 **设置 →「模型供应商」** 配置你的后端。
 
 ---
 
 ## 🚀 快速开始
 
-1. **准备依赖** —— 装好 Claude Code CLI 与 Git 并登录 CLI；没装也可以先打开 LoongCode，到 **设置 →「依赖管理」** 一键安装。
+1. **准备依赖** —— 装好 Claude Code CLI 与 Git 并登录 CLI（想用 Codex 家族任务再装 Codex CLI）；没装也可以先打开 LoongCode，到 **设置 →「依赖管理」** 一键安装。
 2. **安装并打开 LoongCode**。
 3. **添加工作区** —— 指向你的项目目录。
-4. **新建任务** —— 输入需求，回车即开始一个 Claude Code 会话。
+4. **新建任务** —— 输入需求，回车即开始一个会话（可在输入栏选择 Claude Code 或 OpenAI Codex）。
 5. 在右侧用**终端、文件树、Git Review** 跟进改动，在设置里按需接入 **MCP / 插件 / 技能 / 模型供应商**。
 
 ---
@@ -188,7 +191,7 @@ https://github.com/LoongCode0/loongcode-release/releases/latest/download/latest.
 A：不用。打开 LoongCode 后进入 **设置 →「依赖管理」**，在「必须依赖」里点「安装」即可。Windows 上 Claude Code CLI 与 Git 都能直接装好；macOS 上 Git 会调起系统 Xcode 命令行工具安装。装好 Claude Code CLI 后记得完成登录。
 
 **Q：装好后无法对话 / 没有任何模型响应？**
-A：LoongCode 不自带模型能力，它依赖本机的 Claude Code CLI。请确认 `claude` 已安装、在 PATH 中、并已完成登录。
+A：LoongCode 不自带模型能力，它依赖本机的 CLI 工具。请确认对应 CLI 已安装、在 PATH 中并已完成登录：Claude 任务需要 `claude`，Codex 任务需要 `codex`。
 
 **Q：公司网络需要代理怎么办？**
 A：在应用设置中配置 http / https 代理。注意被拉起的 CLI 仅支持 http/https，不支持 SOCKS。
