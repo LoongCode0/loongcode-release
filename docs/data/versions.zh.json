@@ -24,7 +24,8 @@
     ],
     "tags": ["远程桥接", "移动端", "Rust"],
     "patches": [
-      { "version": "0.8.1", "note": "修复 macOS 旧版 Safari / WKWebView 渲染含邮箱自动链接的 Markdown 时整窗崩溃(autolink lookbehind 正则)" }
+      { "version": "0.8.1", "note": "修复 macOS 旧版 Safari / WKWebView 渲染含邮箱自动链接的 Markdown 时整窗崩溃(autolink lookbehind 正则)" },
+      { "version": "0.8.2", "note": "远程桥接打磨：手机端历史保真（用户消息富文本 / 图片切回可见、全局序号稳定 id）· 交互问答与权限单点作答双向同步回 App · 打开任务即拉取权威状态与归档标记" }
     ]
   },
   {
