@@ -91,10 +91,10 @@ const siteJson = JSON.parse(
   readFileSync(new URL('../docs/data/site.json', import.meta.url)),
 );
 
-test('versions.zh.json 计数正确:8 里程碑 / 25 补丁 / 1 规划', () => {
+test('versions.zh.json 计数正确:8 里程碑 / 26 补丁 / 1 规划', () => {
   const stats = computeStats(versionsZh);
   assert.equal(stats.milestoneCount, 8);
-  assert.equal(stats.patchCount, 25);
+  assert.equal(stats.patchCount, 26);
   assert.equal(stats.plannedCount, 1);
 });
 

@@ -27,7 +27,8 @@
       { "version": "0.8.1", "note": "修复 macOS 旧版 Safari / WKWebView 渲染含邮箱自动链接的 Markdown 时整窗崩溃(autolink lookbehind 正则)" },
       { "version": "0.8.2", "note": "远程桥接打磨：手机端历史保真（用户消息富文本 / 图片切回可见、全局序号稳定 id）· 交互问答与权限单点作答双向同步回 App · 打开任务即拉取权威状态与归档标记" },
       { "version": "0.8.3", "note": "后台任务活动指示与查看：run_in_background 命令 / 异步子 Agent 实时可见，任务行 / 标题栏 ⚡N 指示灯 + 分组浮层 + 工具卡后台状态条 + 可关闭实时日志视图（不弹窗不出声、读未读高亮、嵌套子 Agent 实时渲染）· 修复 macOS 切换工作区文件监听析构崩溃（改用 FSEvents）" },
-      { "version": "0.8.4", "note": "PC 远程桥接延伸到后台任务与动态工作流：手机端实时收到后台任务状态、后台子 Agent 内部对话活跃回合内实时流出，冷启动从磁盘重建的工作流运行随打开任务回填、工作流子智能体 transcript 远程可查；修复后台子 Agent 工具卡运行中自动展开致实时流撑长、滚动跟不到底" }
+      { "version": "0.8.4", "note": "PC 远程桥接延伸到后台任务与动态工作流：手机端实时收到后台任务状态、后台子 Agent 内部对话活跃回合内实时流出，冷启动从磁盘重建的工作流运行随打开任务回填、工作流子智能体 transcript 远程可查；修复后台子 Agent 工具卡运行中自动展开致实时流撑长、滚动跟不到底" },
+      { "version": "0.8.5", "note": "UI 配色深度适配与一致性重构：建立主题 token 地基（角色 / 分类色盘 / shadcn 语义 token，深浅自适应），diff / 子 Agent / Review / 用量警戒 / 机器人连接灯 / 工作流状态 / 模型色盘 / 标签族全面接入 token 去写死色；新增 Switch / Checkbox / RadioGroup / Tabs 基元并把散落的原生输入框 / 按钮 / 开关统一收敛；修复 LoongCode 会话无法在裸 claude /resume 恢复" }
     ]
   },
   {

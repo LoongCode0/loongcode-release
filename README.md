@@ -6,7 +6,7 @@
 
 将 Claude Code CLI 与 OpenAI Codex CLI 包裹进一个现代化的桌面工作台 —— 多会话对话、集成终端、文件树、Git Review、命令 / 文件面板，以及 MCP、插件、技能、模型供应商的可视化管理，开箱即用。
 
-![version](https://img.shields.io/badge/version-0.8.4-6d5efc)
+![version](https://img.shields.io/badge/version-0.8.5-6d5efc)
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-444)
 ![built with](https://img.shields.io/badge/built%20with-Tauri%202%20%2B%20React%2019-2f6df6)
 
@@ -103,7 +103,7 @@ https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
 - **后台任务栏提醒** —— 窗口不在前台（含最小化）时，AI 完成 / 失败 / 弹出确认请求会像 QQ / 微信那样闪烁任务栏图标。
 - **新建任务记住上次配置** —— 新建任务 / 技能自动继承上一次使用的模型供应商与参数。
 - **原生窗口装饰（macOS）** —— macOS 采用系统原生 Overlay 标题栏与三键（红黄绿）按钮，侧边栏头部为原生三键预留安全区，并支持刘海屏全屏安全区；Windows 维持无边框定制窗口。
-- **深色主题**、蓝紫渐变视觉、金色 wordmark。
+- **主题化与配色一致性** —— 全应用配色建立在统一的主题 token 地基之上（角色 / 分类色盘 / 语义 token，深浅自适应），diff、子 Agent、Review、用量警戒、机器人连接灯、工作流状态、模型色盘、标签族等场景全部接入 token 而非写死颜色，跨主题观感一致；深色主题、蓝紫渐变视觉、金色 wordmark。
 - **界面语言（中 / 英）** —— 整个图形界面支持中英文切换，默认跟随系统语言、识别不到时回退英语，可在「设置 → 常规」随时切换；AI 对话内容不受影响。
 - **中 / 英文安装界面**，安装时可选语言。
 - **内置自动更新** —— 启动后静默检查并提示升级。
