@@ -6,7 +6,7 @@
 
 将 Claude Code CLI 与 OpenAI Codex CLI 包裹进一个现代化的桌面工作台 —— 多会话对话、集成终端、文件树、Git Review、命令 / 文件面板，以及 MCP、插件、技能、模型供应商的可视化管理，开箱即用。
 
-![version](https://img.shields.io/badge/version-0.8.5-6d5efc)
+![version](https://img.shields.io/badge/version-0.9.0-6d5efc)
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-444)
 ![built with](https://img.shields.io/badge/built%20with-Tauri%202%20%2B%20React%2019-2f6df6)
 
@@ -57,7 +57,7 @@ https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
 ## ✨ 核心功能
 
 ### 会话与任务
-- **多 CLI 支持（Claude / OpenAI Codex）** —— 任务可在 **Claude Code**、**OpenAI Codex** 等多个 CLI 家族之间按需切换（每个任务 / 草稿单独选择，配置各记各的）。Codex 任务获得与 Claude 对齐的完整体验：对话**流式输出**、**交互式审批 + 优雅中断**、**历史还原**、**子智能体子卡片**、**会话分叉**，以及技能 / 插件 / MCP / 模型供应商的可视化管理；底层经 `codex app-server` 持久长连接驱动，每任务一进程、懒启动、空闲回收。
+- **多 CLI 支持（Claude / OpenAI Codex / OpenCode）** —— 任务可在 **Claude Code**、**OpenAI Codex**、**OpenCode** 等多个 CLI 家族之间按需切换（每个任务 / 草稿单独选择，配置各记各的）。Codex 与 OpenCode 任务均获得与 Claude 对齐的完整体验：对话**流式输出**、**交互式审批 + 优雅中断**、**历史还原**、**子智能体子卡片**、**会话分叉**，以及技能 / 插件 / MCP / 模型供应商的可视化管理；底层 Codex 经 `codex app-server`、OpenCode 经 `opencode serve` + SSE 事件流持久长连接驱动，每任务 / 每目录一进程、懒启动、空闲回收。新接入的 **OpenCode** 还支持**复用应用内模型供应商**（OpenAI 兼容，经 config 注入免手配 key）、**每任务思考深度 / 权限档位**、**worktree 会话迁移**，其工具卡与 Read 结果均归一为 Claude 风格。
 - **多工作区 / 多任务管理** —— 每个任务都是一个独立、可恢复的会话；任务列表按最近活动排序，在用的任务自动浮上来；选中任务时自动展开并聚焦其所在分组（工作区 / 置顶 / 时间线日期桶）。
 - **分屏对话（多分栏）** —— 主区可把对话切成多个分栏（左右 / 上下递归平铺、分割线可拖、可关闭塌缩、**拖分栏标题可停靠 / 交换重排**），每个分栏是一个完整对话或新建草稿，可**跨工作区自由混排**；选中分栏时侧栏 / 文件 / 终端 / Git 自动跟随，布局会被记住，误关可 `Ctrl+Shift+T` 撤销。
 - **任务归档** —— 不再活跃的任务可手动（下拉 / 右键）或按最近活动时间自动归档，收纳进独立的「归档视图」，主列表更清爽；自动归档可在设置里开关与调阈值（小时 / 天 / 月），运行中 / 置顶任务受保护。
@@ -80,7 +80,7 @@ https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
 
 ### 输入（Composer）
 - **斜杠命令面板**（`/command`）与 **@ 文件提及面板**、内联文件 chip。
-- **图片输入**、**每任务独立草稿**、**模型 / 推理强度选择器**（Claude 登录内置 **Fable** / Opus / Sonnet / Haiku 档位；Codex 登录内置 **Codex OAuth** 原生档位与 minimal～xhigh 推理强度，模型下拉按当前 CLI 家族过滤）、可自定义的输入工具栏。
+- **图片输入**、**每任务独立草稿**、**模型 / 推理强度选择器**（Claude 登录内置 **Fable** / Opus / Sonnet / Haiku 档位；Codex 登录内置 **Codex OAuth** 原生档位与 minimal～xhigh 推理强度；OpenCode 复用应用内 **OpenAI 兼容供应商** 并可为每个任务选择思考深度；模型下拉按当前 CLI 家族过滤）、可自定义的输入工具栏。
 
 ### 集成开发工具
 - **集成终端** —— 基于 xterm.js + PTY 的真实终端；终端日志里的链接可点击（左键在内嵌浏览器打开、右键调系统浏览器或复制地址）。
@@ -91,9 +91,9 @@ https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
 - **在文件资源管理器中打开**当前工作区。
 
 ### 配置与扩展
-- **Skills（技能）/ MCP 服务器 / Plugins（插件）/ 子智能体（Subagents）** 的可视化管理 —— 子智能体支持**用户 / 项目 / 插件**三作用域的查看、新建、编辑、删除与启停（插件提供者只读）。
+- **Skills（技能）/ MCP 服务器 / Plugins（插件）/ 子智能体（Subagents）** 的可视化管理 —— 覆盖 **Claude / Codex / OpenCode** 三个 CLI 家族（OpenCode 天生共享 Claude 技能根、经托管 `opencode.json` 管理 MCP 与技能 / 子智能体 / 斜杠命令的启停）；子智能体支持**用户 / 项目 / 插件**三作用域的查看、新建、编辑、删除与启停（插件提供者只读）。
 - **Model Providers（模型供应商）** 配置，自由切换后端 —— 常见模型内置**上下文窗口出厂默认值**，新增模型时输入框占位符直接给出推荐值（留空也有合理默认）。
-- **依赖管理 + 运行时版本管理** —— 依赖按必须 / 可选分层呈现；**必备依赖 Claude Code CLI 与 Git 支持应用内一键安装**（Windows 直接装好，macOS 的 Git 走系统 Xcode 命令行工具引导）；对 `uv` / `pnpm`（及 `bun`）可列出 / 安装 / 卸载 / 切换多版本，并支持一键兜底安装。
+- **依赖管理 + 运行时版本管理** —— 依赖按必须 / 可选分层呈现；**必备依赖 Claude Code CLI 与 Git 支持应用内一键安装**（Windows 直接装好，macOS 的 Git 走系统 Xcode 命令行工具引导），**OpenAI Codex 与 OpenCode CLI 亦可应用内一键安装**（三家 AI CLI 至少装其一即可）；对 `uv` / `pnpm`（及 `bun`）可列出 / 安装 / 卸载 / 切换多版本，并支持一键兜底安装。
 - **代理设置** —— 支持 http / https 代理（不支持 SOCKS）。
 - **环境变量设置** —— 为 CLI 子进程（Claude / Codex）注入自定义环境变量（改动自动触发子进程重启）。
 - **用量统计（Usage）** —— 直观查看消耗。

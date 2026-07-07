@@ -13,8 +13,21 @@
     "fullNotesUrl": null
   },
   {
-    "version": "0.8.0",
+    "version": "0.9.0",
     "status": "latest",
+    "date": "2026-07-08",
+    "title": "接入 OpenCode · 三 CLI 支持",
+    "summary": [
+      "接入 OpenCode CLI：任务可在 Claude / Codex / OpenCode 三家间自由切换,流式 / 审批 + 优雅中断 / 历史还原 / 子智能体 / 会话分叉 / worktree 迁移全对齐,底层经 opencode serve 持久连接 + SSE 协议驱动,每目录一进程、懒启动、空闲回收",
+      "OpenCode 一键安装(自管 GitHub 下载)+ 复用应用模型供应商(OpenAI 兼容,config 注入免手配 key)+ 每任务思考深度 / 权限档位 + 技能 / MCP / 插件 / 子智能体 / 斜杠命令设置面板,工具卡与 Read 结果归一为 Claude 风格",
+      "OpenCode 打通移动端伴侣与微信 / 飞书机器人(忠实继承全局配置)· 上下文窗口分母按 CLI 家族精确分派 · 长内容折行消除对话区横向滚动条"
+    ],
+    "tags": ["OpenCode", "三 CLI", "Rust"],
+    "patches": []
+  },
+  {
+    "version": "0.8.0",
+    "status": "released",
     "date": "2026-06-22",
     "title": "PC 远程桥接 · 移动端伴侣",
     "summary": [
