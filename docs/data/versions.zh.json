@@ -5,10 +5,9 @@
     "date": "待排期",
     "title": "规划方向（未排期）",
     "summary": [
-      "移动端原生 App（iOS / Android）",
       "Agent Team 多智能体团队协作"
     ],
-    "tags": ["移动端 App", "Agent Team"],
+    "tags": ["Agent Team"],
     "patches": [],
     "fullNotesUrl": null
   },
