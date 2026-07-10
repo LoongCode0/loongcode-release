@@ -18,7 +18,7 @@ function renderHero(site, stats) {
   const platforms = (site.platforms || []).map((p) => `<span class="pill">${escapeHtml(p)}</span>`).join('');
   const tech = site.techBadge ? `<span class="pill">${escapeHtml(site.techBadge)}</span>` : '';
   return `
-    <div class="big">${escapeHtml(site.brand)}</div>
+    <div class="big"><img class="hero-logo" src="./assets/logo.png" alt="">${escapeHtml(site.brand)}</div>
     <div class="tag">${escapeHtml(site.tagline)}</div>
     <div class="pills">
       <span class="pill cur">当前 v${escapeHtml(site.currentVersion)}</span>

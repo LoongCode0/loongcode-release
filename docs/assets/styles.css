@@ -19,8 +19,9 @@ a{color:inherit;text-decoration:none}
 nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(14px);
   background:rgba(8,8,13,.7);border-bottom:1px solid var(--card-border)}
 nav .inner{max-width:1080px;margin:0 auto;padding:13px 28px;display:flex;align-items:center;gap:14px}
-.wordmark{font-size:20px;font-weight:800;letter-spacing:.5px;
+.wordmark{display:inline-flex;align-items:center;gap:9px;font-size:20px;font-weight:800;letter-spacing:.5px;
   background:linear-gradient(135deg,var(--gold1),var(--gold2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo{width:26px;height:26px;display:block}
 nav .spacer{flex:1}
 .navtag{padding:4px 11px}
 .btn{font-size:13px;font-weight:600;padding:8px 16px;border-radius:10px;background:var(--grad);color:#fff;
@@ -29,8 +30,9 @@ nav .spacer{flex:1}
 .btn.ghost{background:transparent;border:1px solid var(--card-border);box-shadow:none;color:var(--txt2)}
 
 .hero{max-width:1080px;margin:0 auto;padding:74px 28px 30px;text-align:center}
-.hero .big{font-size:54px;font-weight:850;letter-spacing:1px;line-height:1.1;
+.hero .big{display:flex;align-items:center;justify-content:center;gap:18px;font-size:54px;font-weight:850;letter-spacing:1px;line-height:1.1;
   background:linear-gradient(135deg,var(--gold1),var(--gold2) 70%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-logo{width:64px;height:64px;box-shadow:0 12px 34px rgba(0,0,0,.45);border-radius:16px}
 .hero .tag{margin-top:16px;font-size:17px;color:var(--txt2);max-width:600px;margin-left:auto;margin-right:auto}
 .pills{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px}
 .pill{font-size:12.5px;padding:6px 13px;border-radius:999px;border:1px solid var(--card-border);color:var(--txt2);background:rgba(255,255,255,.03)}
@@ -92,7 +94,8 @@ footer a{color:var(--txt2)} footer a:hover{color:#8f9bff}
 footer .spacer{flex:1}
 
 @media(max-width:760px){
-  .hero .big{font-size:38px}
+  .hero .big{font-size:38px;gap:12px}
+  .hero-logo{width:46px;height:46px;border-radius:11px}
   .tl::before{left:9px}
   .row{display:block}
   .cardwrap{width:100%}
