@@ -2,12 +2,7 @@
 
 [English](README.md) | [简体中文](README_zh-CN.md) | **繁體中文** | [日本語](README_ja.md) | [한국어](README_ko.md)
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo.png">
-  <img alt="LoongCode logo" src="docs/assets/logo-light.png" width="128">
-</picture>
-
-# LoongCode
+# <img src="docs/assets/logo-light.png" width="40" alt="LoongCode logo" align="middle"> LoongCode
 
 **把 Claude Code 與 OpenAI Codex 裝進桌面的 AI Agent IDE**
 
