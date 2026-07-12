@@ -1,26 +1,33 @@
 <div align="center">
 
+**English** | [简体中文](README_zh-CN.md) | [繁體中文](README_zh-TW.md) | [日本語](README_ja.md) | [한국어](README_ko.md)
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="docs/assets/logo.png">
+  <img alt="LoongCode logo" src="docs/assets/logo-light.png" width="128">
+</picture>
+
 # LoongCode
 
-**把 Claude Code 与 OpenAI Codex 装进桌面的 AI Agent IDE**
+**The AI Agent IDE that puts Claude Code and OpenAI Codex on your desktop**
 
-将 Claude Code CLI 与 OpenAI Codex CLI 包裹进一个现代化的桌面工作台 —— 多会话对话、集成终端、文件树、Git Review、命令 / 文件面板，以及 MCP、插件、技能、模型供应商的可视化管理，开箱即用。
+Wraps the Claude Code CLI and OpenAI Codex CLI inside a modern desktop workbench — multi-session conversations, an integrated terminal, a file tree, Git review, command/file palettes, plus visual management for MCP, plugins, skills, and model providers. Works out of the box.
 
 ![version](https://img.shields.io/badge/version-0.9.5-6d5efc)
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-444)
 ![built with](https://img.shields.io/badge/built%20with-Tauri%202%20%2B%20React%2019-2f6df6)
 
-[![版本时间线](https://img.shields.io/badge/%E7%89%88%E6%9C%AC%E6%97%B6%E9%97%B4%E7%BA%BF-%E5%9C%A8%E7%BA%BF%E6%9F%A5%E7%9C%8B-6d5efc)](https://release.loongcode.cc)
-[![使用指南](https://img.shields.io/badge/%F0%9F%93%96%20%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97-%E7%82%B9%E6%AD%A4%E6%9F%A5%E9%98%85-0ea5e9?style=flat&labelColor=0f172a)](https://docs.loongcode.cc)
+[![Version Timeline](https://img.shields.io/badge/Version%20Timeline-View%20Online-6d5efc)](https://release.loongcode.cc)
+[![📖 User Guide](https://img.shields.io/badge/%F0%9F%93%96%20User%20Guide-Click%20to%20View-0ea5e9?style=flat&labelColor=0f172a)](https://docs.loongcode.cc)
 
 </div>
 
-> **[📖 查看完整使用指南 →](https://docs.loongcode.cc)**　了解所有功能、配置技巧与最佳实践。
+> **[📖 View the full user guide →](https://docs.loongcode.cc)**　Learn about every feature, configuration tip, and best practice.
 
 
 <div align="center">
 
-### 🎬 宣传片 · 看 LoongCode 跑起来
+### 🎬 Promo Video · See LoongCode in Action
 
 
 
@@ -30,175 +37,175 @@ https://github.com/user-attachments/assets/f679fd9d-627c-4376-8af3-7ca907049eab
 
 </div>
 
-> 📦 **这里是 LoongCode 的官方发布仓库。** 它提供各平台安装包下载，并作为应用「自动更新」的下载源（`latest.json`）。如需源码与开发说明，请前往项目主仓库。
+> 📦 **This is LoongCode's official release repository.** It hosts installers for every platform and serves as the download source for the app's "auto-update" feature (`latest.json`). For source code and development docs, please head to the main project repository.
 
-> 📈 **版本时间线 / 后续规划**：**<https://release.loongcode.cc>** —— 以时间线展示各版本已完成功能摘要，以及后续规划（移动端原生 App / Agent Team 等）。
+> 📈 **Version Timeline / Roadmap**: **<https://release.loongcode.cc>** — a timeline of completed features per release, plus what's coming next (native mobile apps, Agent Teams, and more).
 
 ---
 
-## LoongCode 是什么
+## What is LoongCode
 
-**LoongCode** 是一个基于 **Tauri 2 + React 19** 的跨平台桌面 **Agent IDE**，本质上是 **Claude Code、OpenAI Codex 等多套 Agent CLI 的统一图形化外壳**（后续将持续接入更多 CLI）。
+**LoongCode** is a cross-platform desktop **Agent IDE** built on **Tauri 2 + React 19** — at its core, a **unified graphical shell for multiple Agent CLIs like Claude Code and OpenAI Codex** (with more CLIs to come).
 
-它把原本只能在命令行里使用的 Agent 编程体验，搬进了一个真正的 IDE 式界面：
+It brings the Agent coding experience — previously confined to the command line — into a true IDE-style interface:
 
-- 每一个「任务」对应一个独立的 AI 会话，可在 **Claude Code**、**OpenAI Codex** 等多套 CLI 之间按需切换（每个任务单独选择，模型 / 配置各记各的）；
-- 应用以子进程方式拉起本机的 `claude` 或 `codex` CLI，通过流式 JSON 协议与其实时通信；
-- 把事件流实时渲染成对话 UI，并在同一个窗口里集成终端、文件树、Git Review、命令 / 文件面板，以及各类设置。
+- Every "task" maps to an independent AI session, freely switchable between CLI families like **Claude Code** and **OpenAI Codex** (chosen per task, with each task keeping its own model/config);
+- The app spawns the local `claude` or `codex` CLI as a subprocess and talks to it in real time over a streaming JSON protocol;
+- The event stream is rendered live as a chat UI, with an integrated terminal, file tree, Git review, command/file palettes, and assorted settings all in the same window.
 
-> 💡 可以这样理解：**CLI 是引擎，LoongCode 是驾驶舱** —— 模型调用、代码执行、文件操作交给 CLI，多任务管理、历史还原、Git 集成等工作流增强交给 LoongCode；两者解耦运行、各自独立升级。
+> 💡 Think of it this way: **the CLI is the engine, LoongCode is the cockpit** — model calls, code execution, and file operations belong to the CLI; multi-task management, history restoration, Git integration, and other workflow enhancements belong to LoongCode. The two run decoupled and upgrade independently.
 
-> ⚠️ **重要：LoongCode 自身不直接调用任何模型 API。** 所有模型交互都由它拉起的 CLI 子进程完成，API 密钥与模型配置也由 CLI 自行管理。因此在使用前，你需要先在本机准备好**必备依赖**：已安装并登录的 **Claude Code CLI** 与 **Git**；若想使用 **OpenAI Codex** 家族任务，再额外装上**可选依赖** **Codex CLI** 即可。
+> ⚠️ **Important: LoongCode never calls any model API directly.** All model interaction happens through the CLI subprocess it launches, and API keys/model configuration are managed by that CLI. So before you start, make sure your machine has the **required dependencies**: an installed and logged-in **Claude Code CLI** and **Git**; if you also want to use **OpenAI Codex** family tasks, additionally install the **optional dependency**, the **Codex CLI**.
 >
-> 👉 没装也不必离开应用：LoongCode 内置**「依赖管理」**面板，可直接一键安装 Claude Code CLI、Git 与 Codex CLI（见下方「系统要求」与「🧩 依赖与一键安装」）；登录仍需你在装好后自行完成。
+> 👉 No need to leave the app if you haven't installed them yet: LoongCode has a built-in **"Dependency Management"** panel that can one-click install the Claude Code CLI, Git, and the Codex CLI (see "System Requirements" and "🧩 Dependencies & One-Click Install" below). You'll still need to log in yourself after installing.
 
 ---
 
-## ✨ 核心功能
+## ✨ Key Features
 
-### 会话与任务
-- **多 CLI 支持（Claude / OpenAI Codex / OpenCode）** —— 任务可在 **Claude Code**、**OpenAI Codex**、**OpenCode** 等多个 CLI 家族之间按需切换（每个任务 / 草稿单独选择，配置各记各的）。Codex 与 OpenCode 任务均获得与 Claude 对齐的完整体验：对话**流式输出**、**交互式审批 + 优雅中断**、**历史还原**、**子智能体子卡片**、**会话分叉**，以及技能 / 插件 / MCP / 模型供应商的可视化管理；底层 Codex 经 `codex app-server`、OpenCode 经 `opencode serve` + SSE 事件流持久长连接驱动，每任务 / 每目录一进程、懒启动、空闲回收。新接入的 **OpenCode** 还支持**复用应用内模型供应商**（OpenAI 兼容，经 config 注入免手配 key）、**每任务思考深度 / 权限档位**、**worktree 会话迁移**，其工具卡与 Read 结果均归一为 Claude 风格。
-- **多工作区 / 多任务管理** —— 每个任务都是一个独立、可恢复的会话；任务列表按最近活动排序，在用的任务自动浮上来；选中任务时自动展开并聚焦其所在分组（工作区 / 置顶 / 时间线日期桶）。
-- **分屏对话（多分栏）** —— 主区可把对话切成多个分栏（左右 / 上下递归平铺、分割线可拖、可关闭塌缩、**拖分栏标题可停靠 / 交换重排**），每个分栏是一个完整对话或新建草稿，可**跨工作区自由混排**；选中分栏时侧栏 / 文件 / 终端 / Git 自动跟随，布局会被记住，误关可 `Ctrl+Shift+T` 撤销。
-- **任务归档** —— 不再活跃的任务可手动（下拉 / 右键）或按最近活动时间自动归档，收纳进独立的「归档视图」，主列表更清爽；自动归档可在设置里开关与调阈值（小时 / 天 / 月），运行中 / 置顶任务受保护。
-- **新建任务草稿态** —— 点「新建」先进入草稿，内联挑选工作区 / 模型 / Git 分支或 worktree，发送首条消息才正式创建任务（`Ctrl+N` 快捷新建，默认选上次用过的工作区）。
-- **历史精确还原** —— 从 CLI 的原生会话记录（Claude 的 JSONL、Codex 的 rollout）加上应用侧的 sidecar 还原对话，连用户输入里的文件、命令、图片 chip 身份都能 1:1 复原。
-- **会话分叉 / 优雅中断 / 重跑** —— 从任意历史节点 fork 出新会话；点「停止」等价于按 ESC 优雅中断，保留已生成内容、可继续对话。
-- **编辑历史用户消息**，并从该点继续。
-- **子 Agent 子对话** —— 子 Agent 的对话被路由进独立的折叠卡片（头卡 / 工作报告 / 降级流水三层渐进披露），主线清晰不打架。
-- **后台任务活动指示与查看** —— 以 `run_in_background` 跑起的后台命令、异步子 Agent、服务进程与**动态工作流**等，全程实时可见、绝不卡住「运行中」：任务行与标题栏用 **⚡N 指示灯** 汇总数量、完成 / 失败以高亮点呈现读未读（不弹窗、不出声），点开**分组浮层**速览所有后台项（工作流条目带专属图标与种类提示），发起后台任务的工具卡底部追加**后台状态条**（后台子 Agent 可就地展开看子对话，含嵌套子 Agent 实时渲染），命令 / 服务类还可在右侧打开**可关闭的实时日志视图**。
-- **Claude 动态工作流可视化（非阻塞）** —— 发现并触发 Claude Code 动态工作流（用户 / 项目 `.claude/workflows/*.js`），运行进度渲染成富进度卡：阶段分组（运行中自动展开 / 空闲自动收缩）、子智能体下钻查看 transcript、用量与结果一目了然，应用重启后还能从磁盘重建卡片。工作流**全程后台非阻塞运行**：执行期间输入框不锁定、可继续对话，并入后台任务体系（⚡ 指示灯 / 未读灯 / 侧栏计时 / 后台活动浮层同步覆盖），长跑工作流不会被空闲回收误杀，进程异常退出或手动终止也会如实标记失败。
-- **定时执行消息** —— 给任务设定时发送：支持指定时间 / 间隔 / 每日 / Cron 四种模式，内置免依赖的日期时间选择器，草稿态任务也能预约；定时状态用紫色指示灯呈现，可在全局总览里集中查看与管理。
-- **移动端支持（微信 ClawBot / 飞书 Lark）** —— 绑定微信官方 ClawBot 或飞书机器人后，用手机即可远程新建 / 驱动任务、接收 AI 回复，连交互式提问（AskUserQuestion）也能回数字作答。飞书渠道为**原生 Rust 长连接**实现：扫码建应用绑定、私聊全转发 / 群里 @ 机器人触发、连接健康指示灯（绿 / 黄 / 灰），网络波动自动重连且不丢凭据。
-- **PC 远程桥接（移动端伴侣）** —— 用手机扫码与桌面配对后，经**加密中转**与桌面建立可靠双向连接，把桌面任务搬到手机上远程驱动：实时收发对话消息、**历史保真回放**（用户消息里的富文本 / 图片切回手机端依旧可见、每条 event 附全局稳定序号）、按任务路由、优雅中断，输入框同样支持 **/命令 · @文件 · 图片**等富输入；打开任务即拉取**权威状态快照**与归档标记，运行中 / 已归档一目了然。桌面**四件套配置（模型 / 推理强度 / 权限 / CLI）双向同步**——本地改动回推 App、远程改动落库桌面，**OpenCode 任务的模型 / 供应商 / 思考深度 / 权限档位等配置同样可在手机端回显与修改**，斜杠命令 / 技能列表也覆盖 OpenCode，且**严格跟随任务所选 CLI**（草稿态切换 CLI 后，命令 / 技能 / 工作流列表随之切换，不再固定按 Claude 列出）；交互式提问与权限请求**单点作答、双向同步**，桌面端作答后已答态实时回传手机，两端绝不重复打扰，**待答的权限请求在重开任务时依旧可继续作答**（停止 / 中断路径同步清理，不留幽灵审批卡）。**后台任务与动态工作流同样远程可见**——手机端实时收到后台任务状态、后台子 Agent 的内部对话在活跃回合内实时流出，应用冷启动时从磁盘重建的工作流运行随打开任务回填、工作流子智能体的 transcript 远程可查。底层为**原生 Rust** 实现：ECDH 配对 + 端到端加密、断线自动重连重发不丢包、应用层心跳保活与假在线检测，设备解绑即时生效并向已解绑的 App 明确回执。
+### Sessions & Tasks
+- **Multi-CLI support (Claude / OpenAI Codex / OpenCode)** — Tasks can switch freely among **Claude Code**, **OpenAI Codex**, and **OpenCode** CLI families (chosen per task/draft, each keeping its own config). Codex and OpenCode tasks get a full experience on par with Claude: **streaming output**, **interactive approvals with graceful interruption**, **history restoration**, **sub-agent cards**, **session forking**, plus visual management of skills/plugins/MCP/model providers; under the hood, Codex is driven by `codex app-server` and OpenCode by `opencode serve` + an SSE event stream, both kept alive as a persistent long connection — one process per task/directory, lazily started, reclaimed when idle. The newly added **OpenCode** also supports **reusing the app's built-in model providers** (OpenAI-compatible, credentials injected via config with no manual key setup), **per-task thinking depth/permission tier**, and **worktree session migration**; its tool cards and Read results are all normalized to the Claude style.
+- **Multi-workspace / multi-task management** — Every task is an independent, resumable session; the task list sorts by recent activity, with active tasks automatically floating to the top; selecting a task auto-expands and focuses the group it belongs to (workspace / pinned / timeline date bucket).
+- **Split conversations (multi-pane)** — The main area can split into multiple panes (recursive left/right and top/bottom tiling, draggable dividers, collapsible panes, **drag a pane's title to dock/swap/reorder**); each pane is a full conversation or a new draft, and panes **can be freely mixed across workspaces**; selecting a pane auto-syncs the sidebar/files/terminal/Git panels, layouts are remembered, and an accidental close can be undone with `Ctrl+Shift+T`.
+- **Task archiving** — Inactive tasks can be archived manually (dropdown / right-click) or automatically based on recent activity, tucked away into a separate "Archive view" to keep the main list tidy; auto-archiving can be toggled and its threshold tuned in settings (hours / days / months), with running/pinned tasks protected.
+- **Draft state for new tasks** — Clicking "New" opens a draft first, where you pick the workspace/model/Git branch or worktree inline; the task is only created once you send the first message (`Ctrl+N` for a quick new task, defaulting to the last-used workspace).
+- **Precise history restoration** — Conversations are reconstructed from the CLI's native session records (Claude's JSONL, Codex's rollout) plus an app-side sidecar, restoring even the identity of files, commands, and image chips inside user messages 1:1.
+- **Session forking / graceful interruption / rerun** — Fork a new session from any point in history; clicking "Stop" is equivalent to pressing ESC for a graceful interruption, keeping what's already been generated and letting you continue the conversation.
+- **Edit a past user message** and continue from that point.
+- **Sub-agent nested conversations** — Sub-agent conversations are routed into their own collapsible cards (a three-tier progressive disclosure of header card / work report / degraded stream), keeping the main thread clean and uncluttered.
+- **Background task activity indicators** — Commands run with `run_in_background`, async sub-agents, service processes, **dynamic workflows**, and more all stay visible in real time and never get stuck showing "running": the task row and title bar surface a **⚡N indicator** summarizing the count, with completions/failures shown as unread highlight dots (no popups, no sounds); opening the **group overlay** gives a quick glance at all background items (workflow entries get their own icon and type hint); the tool card that kicked off a background task gets a **background status bar** appended (background sub-agents can be expanded in place to view their sub-conversation, including nested sub-agents rendered live); command/service-type tasks can also open a **closable live log view** on the right.
+- **Claude dynamic workflow visualization (non-blocking)** — Discovers and triggers Claude Code dynamic workflows (user/project `.claude/workflows/*.js`); progress is rendered as rich progress cards: phase grouping (auto-expands while running, auto-collapses when idle), drill into a sub-agent's transcript, usage and results at a glance, and cards can be rebuilt from disk after an app restart. Workflows **run fully in the background, non-blocking**: the input box stays unlocked during execution and you can keep chatting; they're folded into the background task system (⚡ indicator / unread dot / sidebar timer / background activity overlay all stay in sync), long-running workflows won't get killed by idle reclamation, and an abnormal process exit or manual termination is honestly marked as failed.
+- **Scheduled messages** — Schedule a task to send at a later time: supports four modes — specific time / interval / daily / cron — with a built-in, dependency-free date-time picker; even draft-state tasks can be scheduled. Scheduled status shows as a purple indicator, viewable and manageable together from the global overview.
+- **Mobile support (WeChat ClawBot / Feishu Lark)** — After binding the official WeChat ClawBot or a Lark bot, you can remotely create/drive tasks and receive AI replies from your phone — even interactive questions (AskUserQuestion) can be answered by replying with a number. The Lark channel is built as a **native Rust long-lived connection**: scan a QR code to bind the app, private chats forward everything while group chats trigger on @mention, a connection-health indicator (green/yellow/gray), and automatic reconnection on network hiccups without losing credentials.
+- **PC Remote Bridge (mobile companion)** — Pair your phone with the desktop via QR code, then establish a reliable bidirectional connection through an **encrypted relay** to drive desktop tasks remotely from your phone: real-time send/receive of conversation messages, **faithful history playback** (rich text/images inside user messages remain visible after switching back to mobile, every event carries a globally stable sequence number), per-task routing, graceful interruption, and the input box on mobile supports the same rich input — **/commands · @files · images**; opening a task pulls an **authoritative status snapshot** plus archive markers, so running/archived state is clear at a glance. Desktop's **four-piece config (model / reasoning effort / permissions / CLI) syncs both ways** — local changes push to the app, remote changes are persisted back to the desktop, and **OpenCode task settings — model / provider / thinking depth / permission tier — can likewise be viewed and changed from the phone**; slash commands and the skills list also cover OpenCode, and both **strictly follow the task's selected CLI** (switching CLI on a draft task switches its commands/skills/workflows list accordingly, no longer hardcoded to Claude's list). Interactive questions and permission requests are **answered once, synced both ways** — once answered on desktop, the answered state is reflected back to the phone in real time, so neither side ever double-prompts you, and **a pending permission request can still be answered after reopening the task** (stop/interrupt paths clean up in sync, leaving no ghost approval cards). **Background tasks and dynamic workflows are equally visible remotely** — the phone gets real-time background task status, a background sub-agent's internal conversation streams live during an active turn, workflow runs rebuilt from disk on cold start backfill when you open the task, and a workflow sub-agent's transcript is viewable remotely too. Under the hood it's all **native Rust**: ECDH pairing + end-to-end encryption, automatic reconnect-and-resend on disconnect with no packet loss, application-level heartbeats with fake-online detection, and unbinding a device takes effect immediately with an explicit receipt sent to the unbound app.
 
-### 对话体验
-- **富文本消息气泡** —— Markdown 渲染、表格、代码语法高亮、Markdown 预览。
-- **工具调用时间线卡片** —— Read / Write / Edit 的 diff、WebSearch 结果等聚合成连续的时间线卡片（连续调用共享左缘线、可逐行展开详情），一目了然又不占地方。
-- **交互式提问（AskUserQuestion）** —— 在 UI 里直接点选选项，支持「其他」自定义输入。
-- **AI 消息工具栏**、对话内链接用系统浏览器打开、任务状态与未读指示。
+### Conversation Experience
+- **Rich message bubbles** — Markdown rendering, tables, syntax-highlighted code, Markdown preview.
+- **Tool-call timeline cards** — Read/Write/Edit diffs, WebSearch results, and more are aggregated into a continuous timeline card (consecutive calls share a left edge line, expandable line-by-line for details) — clear at a glance without taking up space.
+- **Interactive questions (AskUserQuestion)** — Click options directly in the UI, with an "Other" free-text option supported.
+- **AI message toolbar**, in-conversation links open in the system browser, task status and unread indicators.
 
-### 输入（Composer）
-- **斜杠命令面板**（`/command`）与 **@ 文件提及面板**、内联文件 chip。
-- **图片输入**、**每任务独立草稿**、**模型 / 推理强度选择器**（Claude 登录内置 **Fable** / Opus / Sonnet / Haiku 档位；Codex 登录内置 **Codex OAuth** 原生档位与 minimal～xhigh 推理强度；OpenCode 复用应用内 **OpenAI 兼容供应商** 并可为每个任务选择思考深度；模型下拉按当前 CLI 家族过滤）、可自定义的输入工具栏。
+### Input (Composer)
+- **Slash command palette** (`/command`) plus an **@ file-mention palette** and inline file chips.
+- **Image input**, **per-task independent drafts**, a **model / reasoning-effort picker** (Claude login ships with built-in **Fable** / Opus / Sonnet / Haiku tiers; Codex login ships with native **Codex OAuth** tiers and minimal–xhigh reasoning effort; OpenCode reuses the app's built-in **OpenAI-compatible providers** and lets you pick a thinking depth per task; the model dropdown filters by the current CLI family), and a customizable input toolbar.
 
-### 集成开发工具
-- **集成终端** —— 基于 xterm.js + PTY 的真实终端；终端日志里的链接可点击（左键在内嵌浏览器打开、右键调系统浏览器或复制地址）。
-- **文件树侧栏 + 侧边文件面板 + Monaco 编辑器** —— 浏览、查看代码与 Diff。
-- **文件树多选与文件操作** —— 单击选中 / 拖拽框选，复制 / 剪切 / 粘贴（接入系统文件剪贴板，与资源管理器互通）、新建 / 重命名 / 删除，支持 `Del` 与 `Ctrl+C/X/V` 快捷键。
-- **Git 工作流** —— 分支切换、变更 Review 面板、提交菜单（含 ✨ 一键生成提交消息）、worktree 自动检测与跟随。
-- **内嵌浏览器面板** —— 在右侧面板直接打开网页，支持多标签、跨任务共享，查文档 / 预览页面无需离开应用。
-- **在文件资源管理器中打开**当前工作区。
+### Integrated Dev Tools
+- **Integrated terminal** — A real terminal built on xterm.js + PTY; links in terminal output are clickable (left-click opens in the embedded browser, right-click opens in the system browser or copies the address).
+- **File tree sidebar + side file panel + Monaco editor** — Browse and view code and diffs.
+- **Multi-select and file operations in the file tree** — Click to select / drag to box-select, copy / cut / paste (wired into the system file clipboard, interoperable with File Explorer), create / rename / delete, with `Del` and `Ctrl+C/X/V` shortcuts supported.
+- **Git workflow** — Branch switching, a change-review panel, a commit menu (including ✨ one-click commit message generation), and automatic worktree detection and following.
+- **Embedded browser panel** — Open web pages directly in the right-side panel, with multi-tab support shared across tasks — check docs or preview pages without leaving the app.
+- **Open in File Explorer** for the current workspace.
 
-### 配置与扩展
-- **Skills（技能）/ MCP 服务器 / Plugins（插件）/ 子智能体（Subagents）** 的可视化管理 —— 覆盖 **Claude / Codex / OpenCode** 三个 CLI 家族（OpenCode 天生共享 Claude 技能根、经托管 `opencode.json` 管理 MCP 与技能 / 子智能体 / 斜杠命令的启停）；子智能体支持**用户 / 项目 / 插件**三作用域的查看、新建、编辑、删除与启停（插件提供者只读）。
-- **Model Providers（模型供应商）** 配置，自由切换后端 —— 常见模型内置**上下文窗口出厂默认值**，新增模型时输入框占位符直接给出推荐值（留空也有合理默认）。
-- **依赖管理 + 运行时版本管理** —— 依赖按必须 / 可选分层呈现；**必备依赖 Claude Code CLI 与 Git 支持应用内一键安装**（Windows 直接装好，macOS 的 Git 走系统 Xcode 命令行工具引导），**OpenAI Codex 与 OpenCode CLI 亦可应用内一键安装**（三家 AI CLI 至少装其一即可）；对 `uv` / `pnpm`（及 `bun`）可列出 / 安装 / 卸载 / 切换多版本，并支持一键兜底安装。
-- **代理设置** —— 支持 http / https 代理（不支持 SOCKS）。
-- **环境变量设置** —— 为 CLI 子进程（Claude / Codex）注入自定义环境变量（改动自动触发子进程重启）。
-- **用量统计（Usage）** —— 直观查看消耗。
+### Configuration & Extensions
+- **Visual management of Skills / MCP servers / Plugins / Sub-agents** — Covers all three CLI families, **Claude / Codex / OpenCode** (OpenCode natively shares Claude's skills root, and manages MCP plus enabling/disabling skills/sub-agents/slash commands via a managed `opencode.json`); sub-agents support viewing, creating, editing, deleting, and enabling/disabling across **user / project / plugin** scopes (plugin-provided ones are read-only).
+- **Model Providers** configuration, freely switch backends — common models ship with **factory-default context window sizes**; when adding a model, the input placeholder shows a recommended value directly (a sensible default even if left blank).
+- **Dependency management + runtime version management** — Dependencies are shown grouped by required/optional; the **required dependencies, Claude Code CLI and Git, support one-click in-app install** (installed directly on Windows; macOS's Git is guided through the system Xcode Command Line Tools), and **OpenAI Codex and OpenCode CLI can also be one-click installed in-app** (having at least one of the three AI CLIs installed is enough). For `uv` / `pnpm` (and `bun`), you can list / install / uninstall / switch between multiple versions, with one-click fallback install supported.
+- **Proxy settings** — Supports http/https proxies (SOCKS is not supported).
+- **Environment variable settings** — Inject custom environment variables into CLI subprocesses (Claude/Codex); changes automatically trigger a subprocess restart.
+- **Usage** — See your consumption at a glance.
 
-### 桌面体验
-- **全应用自定义右键菜单** —— 对话区、预览、文件树、任务行、侧边栏空白处都有贴合场景的右键菜单，替换系统默认菜单。
-- **后台任务栏提醒** —— 窗口不在前台（含最小化）时，AI 完成 / 失败 / 弹出确认请求会像 QQ / 微信那样闪烁任务栏图标。
-- **新建任务记住上次配置** —— 新建任务 / 技能自动继承上一次使用的模型供应商与参数。
-- **原生窗口装饰（macOS）** —— macOS 采用系统原生 Overlay 标题栏与三键（红黄绿）按钮，侧边栏头部为原生三键预留安全区，并支持刘海屏全屏安全区；Windows 维持无边框定制窗口。
-- **主题化与配色一致性（宣纸墨金）** —— 全新「宣纸墨金」视觉语言：三套精心调校的主题（深色 / 浅色 / 护眼黛青），暖调宣纸底 + 墨色文字 + 金印点睛，内容性标题采用思源宋体衬线、深色主题辅以背景淡金光晕；对话区、输入区（纸面浮盒 + 圆形金印发送钮）、任务行（金书签状态谱）、设置页（纸面卡分组）、文件面板 / 终端 / Monaco（gruvbox ANSI16）全域一致换肤。全应用配色建立在统一的主题 token 地基之上（角色 / 分类色盘 / 语义 token，深浅自适应），diff、子 Agent、Review、用量警戒、机器人连接灯、工作流状态、模型色盘、标签族等场景全部接入 token 而非写死颜色，跨主题观感一致，默认跟随系统深浅。
-- **全新应用图标「衔尾圆环龙」** —— 玄墨金圆角方章徽章：衔尾成环的小龙落在玄墨底上、金鳞点睛；应用内侧边栏 logo 按三主题（深色 / 浅色 / 护眼黛青）跟随切换、各显专属配色，护眼主题字标采用黛青同色。
-- **界面语言（中 / 英）** —— 整个图形界面支持中英文切换，默认跟随系统语言、识别不到时回退英语，可在「设置 → 常规」随时切换；AI 对话内容不受影响。
-- **中 / 英文安装界面**，安装时可选语言。
-- **内置自动更新** —— 启动后静默检查并提示升级。
-- **新手引导（Onboarding Tour）** —— 第一次使用不迷路。
+### Desktop Experience
+- **App-wide custom context menus** — The conversation area, preview, file tree, task rows, and sidebar empty space all get context menus tailored to their context, replacing the system default menu.
+- **Taskbar notifications for background tasks** — When the window isn't in the foreground (including minimized), an AI completion/failure or a confirmation request will flash the taskbar icon, just like QQ or WeChat.
+- **New tasks remember your last config** — New tasks/skills automatically inherit the model provider and parameters you used last time.
+- **Native window chrome (macOS)** — macOS uses the system's native overlay title bar with traffic-light buttons; the sidebar header reserves a safe area for the native traffic lights and supports the notch's full-screen safe area; Windows keeps its custom frameless window.
+- **Consistent theming and color system ("Xuan Paper & Ink Gold")** — A brand-new visual language: three carefully tuned themes (dark / light / eye-care blue-black), warm xuan-paper backgrounds with ink-black text and a touch of gold, content headings set in a Source Han Serif typeface, and the dark theme adds a faint gold glow to the background. The conversation area, input area (a floating paper-like box with a round gold-seal send button), task rows (a gold-bookmark status spectrum), settings page (paper-card groupings), and file panel / terminal / Monaco (gruvbox ANSI16) are all re-skinned consistently across the app. The whole app's color system sits on a unified theme-token foundation (role / category palettes / semantic tokens, light/dark adaptive) — diffs, sub-agents, review, usage warnings, bot connection indicators, workflow status, model color palette, tag families, and more all consume tokens instead of hardcoded colors, so the look stays consistent across themes and follows the system's light/dark setting by default.
+- **New app icon, "Ouroboros Dragon Ring"** — A dark ink-and-gold rounded square seal badge: a small dragon biting its own tail forms a ring, resting on an ink-black background with gold scales as the highlight; the in-app sidebar logo follows the three themes (dark / light / eye-care blue-black), each with its own color scheme, with the eye-care theme's wordmark in a matching blue-black tone.
+- **Interface language (Chinese/English)** — The entire UI supports switching between Chinese and English, defaulting to the system language and falling back to English when it can't be detected; switch anytime in **Settings → General**. AI conversation content is unaffected.
+- **Bilingual (Chinese/English) installer**, choose your language during installation.
+- **Built-in auto-update** — Silently checks for updates on launch and prompts you to upgrade.
+- **Onboarding Tour** — Never get lost on your first use.
 
 ---
 
-## 💻 系统要求
+## 💻 System Requirements
 
-| 项目 | 说明 |
+| Item | Details |
 | --- | --- |
-| **操作系统** | Windows 10/11（x64 / ARM64）、macOS（Apple Silicon 与 Intel，Universal） |
-| **必备依赖** | **Claude Code CLI**（已安装并完成登录 / 配置）与 **Git**；两者均可在应用内一键安装 |
-| **可选依赖** | **OpenAI Codex CLI** —— 想用 Codex 家族任务时安装，同样支持应用内一键安装 |
-| **网络（可选）** | 如需走代理，仅支持 http / https 代理（不支持 SOCKS） |
+| **OS** | Windows 10/11 (x64 / ARM64), macOS (Apple Silicon and Intel, Universal) |
+| **Required dependencies** | **Claude Code CLI** (installed and logged in / configured) and **Git**; both can be one-click installed in-app |
+| **Optional dependency** | **OpenAI Codex CLI** — install it if you want to use Codex-family tasks; also supports one-click in-app install |
+| **Network (optional)** | If you need a proxy, only http/https proxies are supported (SOCKS is not) |
 
-> 💡 **没装这两个依赖也没关系**：装好 LoongCode 后进入 **设置 →「依赖管理」**，即可一键安装 Claude Code CLI 与 Git，无需手动折腾命令行（详见下方「🧩 依赖与一键安装」）。
+> 💡 **It's fine if you haven't installed these two dependencies yet**: after installing LoongCode, go to **Settings → "Dependency Management"** to one-click install the Claude Code CLI and Git — no need to wrangle the command line by hand (see "🧩 Dependencies & One-Click Install" below for details).
 >
-> 实际可下载的安装包，请以本仓库 [Releases](../../releases) 页面的产物为准。
+> For the actual downloadable installers, refer to this repository's [Releases](../../releases) page.
 
 ---
 
-## 📥 下载与安装
+## 📥 Download & Install
 
-1. 打开本仓库的 **[Releases](../../releases)** 页面。
-2. 选择与你的系统匹配的安装包下载：
-   - **Windows**：NSIS 安装程序（`.exe`），安装向导内置中 / 英文界面。
-   - **macOS**：磁盘镜像（`.dmg`）/ 应用包。
-3. 运行安装包，按向导完成安装。
-4. 首次使用前，确保本机已安装 **Claude Code CLI**（并登录）与 **Git**；若尚未安装，可在启动后到 **设置 →「依赖管理」** 一键安装（见下方「🧩 依赖与一键安装」）。
+1. Open this repository's **[Releases](../../releases)** page.
+2. Pick the installer that matches your system:
+   - **Windows**: NSIS installer (`.exe`), with a bilingual Chinese/English installation wizard built in.
+   - **macOS**: Disk image (`.dmg`) / app bundle.
+3. Run the installer and follow the wizard to finish installation.
+4. Before first use, make sure your machine has **Claude Code CLI** installed (and logged in) and **Git**; if not, you can one-click install them after launch via **Settings → "Dependency Management"** (see "🧩 Dependencies & One-Click Install" below).
 
-> 若系统弹出来源安全提示（Windows SmartScreen / macOS Gatekeeper），按系统指引选择继续运行即可。
+> If the system shows a source-safety prompt (Windows SmartScreen / macOS Gatekeeper), follow the system's guidance to continue running it.
 
 ---
 
-## 🧩 依赖与一键安装
+## 🧩 Dependencies & One-Click Install
 
-LoongCode 运行需要两个**必备依赖**：
+Running LoongCode needs two **required dependencies**:
 
-- **Claude Code CLI** —— 提供模型能力（应用本身不直接调用 Anthropic API）。
-- **Git** —— 驱动分支切换、变更 Review、worktree 等 Git 工作流。
+- **Claude Code CLI** — Provides the model capability (the app itself never calls the Anthropic API directly).
+- **Git** — Powers branch switching, change review, worktrees, and other Git workflows.
 
-本机还没装也没关系，**无需手动敲命令行**：打开 LoongCode，进入 **设置 →「依赖管理」**，在「必须依赖」分组里就能看到它们的安装状态，点 **「安装」** 即可一键装好。
+It's fine if you haven't installed them yet — **no need to type any commands by hand**: open LoongCode, go to **Settings → "Dependency Management"**, and you'll see their install status under the "Required Dependencies" group; just click **"Install"** for a one-click setup.
 
-| 必备依赖 | Windows | macOS |
+| Required Dependency | Windows | macOS |
 | --- | --- | --- |
-| **Claude Code CLI** | 一键安装（官方安装脚本） | 一键安装（官方安装脚本） |
-| **Git** | 一键安装（便携版 PortableGit，装入应用目录） | 点「触发系统安装」调起系统 Xcode 命令行工具安装；也可自行 `brew install git` |
+| **Claude Code CLI** | One-click install (official install script) | One-click install (official install script) |
+| **Git** | One-click install (portable PortableGit, installed into the app directory) | Click "Trigger System Install" to launch the system's Xcode Command Line Tools installer; or run `brew install git` yourself |
 
-- 安装过程实时显示日志，完成后自动重新检测状态。
-- 代理环境下，可在该面板为依赖单独配置 http / https 代理后再安装。
-- 「可选依赖」`uv` / `pnpm` / `bun` 同样支持一键安装与多版本切换。
-- **可选接入 OpenAI Codex CLI** —— 若想用 Codex 家族任务,依赖管理同样支持**一键安装 Codex CLI**(官方安装脚本 / GitHub 直连 / 镜像加速三态);设置里的技能 / 插件 / MCP / 子智能体面板均提供 Codex 维度。
-- **Claude Code CLI 安装来源可选** —— 官方安装脚本 / GitHub 直连 / GitHub 镜像加速(镜像前缀可自定义),应对官方源在部分网络环境下不可达。
-- **Git 安装来源可选(Windows)** —— GitHub 直连 / 镜像加速(镜像前缀可自定义),便携版 PortableGit 在网络受限环境下也能顺利装上。
+- Installation shows a live log, and status is automatically re-checked when it finishes.
+- Behind a proxy, you can configure a per-dependency http/https proxy in this panel before installing.
+- The "optional dependencies" `uv` / `pnpm` / `bun` also support one-click install and switching between multiple versions.
+- **Optionally add OpenAI Codex CLI** — If you want Codex-family tasks, Dependency Management also supports **one-click installing the Codex CLI** (official install script / direct GitHub / mirror acceleration — three modes); the skills/plugins/MCP/sub-agent panels in settings all cover the Codex dimension too.
+- **Choice of install source for Claude Code CLI** — Official install script / direct GitHub / GitHub mirror acceleration (customizable mirror prefix), for when the official source isn't reachable on some networks.
+- **Choice of install source for Git (Windows)** — Direct GitHub / mirror acceleration (customizable mirror prefix); the portable PortableGit installs smoothly even on restricted networks.
 
-> ⚠️ 应用只能帮你把 CLI **装好**，**登录仍需自行完成**：在集成终端运行 `claude` / `codex` 按提示登录，或在 **设置 →「模型供应商」** 配置你的后端。
-
----
-
-## 🚀 快速开始
-
-1. **准备依赖** —— 装好 Claude Code CLI 与 Git 并登录 CLI（想用 Codex 家族任务再装 Codex CLI）；没装也可以先打开 LoongCode，到 **设置 →「依赖管理」** 一键安装。
-2. **安装并打开 LoongCode**。
-3. **添加工作区** —— 指向你的项目目录。
-4. **新建任务** —— 输入需求，回车即开始一个会话（可在输入栏选择 Claude Code 或 OpenAI Codex）。
-5. 在右侧用**终端、文件树、Git Review** 跟进改动，在设置里按需接入 **MCP / 插件 / 技能 / 模型供应商**。
+> ⚠️ The app can only help you **install** the CLIs — **you still need to log in yourself**: run `claude` / `codex` in the integrated terminal and follow the prompts to log in, or configure your backend under **Settings → "Model Providers"**.
 
 ---
 
-## 🔄 自动更新
+## 🚀 Quick Start
 
-LoongCode 内置 [Tauri Updater](https://v2.tauri.app/plugin/updater/)。应用会向本仓库的发布源拉取更新清单：
+1. **Prepare dependencies** — Install Claude Code CLI and Git and log in to the CLI (also install the Codex CLI if you want Codex-family tasks); if you haven't installed them, you can open LoongCode first and one-click install via **Settings → "Dependency Management"**.
+2. **Install and open LoongCode**.
+3. **Add a workspace** — Point it at your project directory.
+4. **Create a new task** — Type what you need and press Enter to start a session (choose Claude Code or OpenAI Codex in the input bar).
+5. Use the **terminal, file tree, and Git review** on the right to follow along with changes, and wire up **MCP / plugins / skills / model providers** as needed in settings.
+
+---
+
+## 🔄 Auto Update
+
+LoongCode has a built-in [Tauri Updater](https://v2.tauri.app/plugin/updater/). The app pulls its update manifest from this repository's release source:
 
 ```
 https://github.com/LoongCode0/loongcode-release/releases/latest/download/latest.json
 ```
 
-检测到新版本时会提示用户，Windows 端采用 passive（静默）安装模式，更新过程基本无感。
+When a new version is detected, the user is prompted; on Windows this uses passive (silent) install mode, so the update process is mostly unnoticeable.
 
 ---
 
-## ❓ 常见问题
+## ❓ FAQ
 
-**Q：本机还没装 Claude Code CLI 或 Git，必须手动装吗？**
-A：不用。打开 LoongCode 后进入 **设置 →「依赖管理」**，在「必须依赖」里点「安装」即可。Windows 上 Claude Code CLI 与 Git 都能直接装好；macOS 上 Git 会调起系统 Xcode 命令行工具安装。装好 Claude Code CLI 后记得完成登录。
+**Q: I haven't installed the Claude Code CLI or Git yet — do I have to install them by hand?**
+A: No. Open LoongCode, go to **Settings → "Dependency Management"**, and click "Install" under "Required Dependencies." On Windows, both Claude Code CLI and Git can be installed directly; on macOS, Git is installed via the system's Xcode Command Line Tools. Remember to log in after installing Claude Code CLI.
 
-**Q：装好后无法对话 / 没有任何模型响应？**
-A：LoongCode 不自带模型能力，它依赖本机的 CLI 工具。请确认对应 CLI 已安装、在 PATH 中并已完成登录：Claude 任务需要 `claude`，Codex 任务需要 `codex`。
+**Q: I installed it but can't chat / get no model response at all?**
+A: LoongCode doesn't ship with any model capability of its own — it relies on the CLI tools on your machine. Make sure the relevant CLI is installed, on your PATH, and logged in: Claude tasks need `claude`, Codex tasks need `codex`.
 
-**Q：公司网络需要代理怎么办？**
-A：在应用设置中配置 http / https 代理。注意被拉起的 CLI 仅支持 http/https，不支持 SOCKS。
+**Q: My company network requires a proxy — what do I do?**
+A: Configure an http/https proxy in the app's settings. Note that the CLI it launches only supports http/https, not SOCKS.
 
-**Q：更新检查不到新版本？**
-A：自动更新依赖本仓库 Releases 的 `latest.json`，请确认网络可访问 GitHub。
+**Q: The update check isn't finding a new version?**
+A: Auto-update relies on this repository's Releases `latest.json`, so make sure your network can reach GitHub.
 
 ---
