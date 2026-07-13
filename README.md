@@ -208,3 +208,17 @@ A: Configure an http/https proxy in the app's settings. Note that the CLI it lau
 A: Auto-update relies on this repository's Releases `latest.json`, so make sure your network can reach GitHub.
 
 ---
+
+## 💖 Sponsor
+
+<div align="center">
+
+If LoongCode has made your work easier, consider buying the author a coffee to support continued development ❤️
+
+| WeChat Pay | Alipay |
+| :---: | :---: |
+| <img src="docs/assets/wx.png" width="200" alt="WeChat sponsor QR code"> | <img src="docs/assets/zfb.png" width="200" alt="Alipay sponsor QR code"> |
+
+</div>
+
+---

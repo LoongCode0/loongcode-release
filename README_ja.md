@@ -206,3 +206,17 @@ A：アプリの設定で http / https プロキシを設定してください�
 A：自動更新は本リポジトリ Releases の `latest.json` に依存しています。ネットワークから GitHub にアクセスできることを確認してください。
 
 ---
+
+## 💖 応援・スポンサー
+
+<div align="center">
+
+LoongCode が役に立ったら、開発者にコーヒーを一杯おごって継続的な開発を応援してください ❤️
+
+| WeChat Pay | Alipay |
+| :---: | :---: |
+| <img src="docs/assets/wx.png" width="200" alt="WeChat 応援用 QR コード"> | <img src="docs/assets/zfb.png" width="200" alt="Alipay 応援用 QR コード"> |
+
+</div>
+
+---

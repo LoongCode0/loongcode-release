@@ -206,3 +206,17 @@ A：在應用程式設定中設定 http / https 代理。注意被啟動的 CLI 
 A：自動更新依賴本儲存庫 Releases 的 `latest.json`，請確認網路可正常存取 GitHub。
 
 ---
+
+## 💖 贊助支持
+
+<div align="center">
+
+若 LoongCode 對你有幫助，歡迎請作者喝杯咖啡，支持專案持續開發 ❤️
+
+| 微信支付 | 支付寶 |
+| :---: | :---: |
+| <img src="docs/assets/wx.png" width="200" alt="微信贊助二維碼"> | <img src="docs/assets/zfb.png" width="200" alt="支付寶贊助二維碼"> |
+
+</div>
+
+---

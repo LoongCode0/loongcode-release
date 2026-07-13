@@ -206,3 +206,17 @@ A：在应用设置中配置 http / https 代理。注意被拉起的 CLI 仅支
 A：自动更新依赖本仓库 Releases 的 `latest.json`，请确认网络可访问 GitHub。
 
 ---
+
+## 💖 赞助支持
+
+<div align="center">
+
+如果 LoongCode 对你有帮助，欢迎请作者喝杯咖啡，支持项目持续开发 ❤️
+
+| 微信支付 | 支付宝 |
+| :---: | :---: |
+| <img src="docs/assets/wx.png" width="200" alt="微信赞助二维码"> | <img src="docs/assets/zfb.png" width="200" alt="支付宝赞助二维码"> |
+
+</div>
+
+---

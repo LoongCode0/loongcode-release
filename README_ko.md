@@ -206,3 +206,17 @@ A: 앱 설정에서 http / https 프록시를 구성하세요. 단, 실행되는
 A: 자동 업데이트는 이 저장소 Releases의 `latest.json`에 의존합니다. 네트워크에서 GitHub에 접근할 수 있는지 확인하세요.
 
 ---
+
+## 💖 후원
+
+<div align="center">
+
+LoongCode가 도움이 되었다면, 개발자에게 커피 한 잔 후원하여 지속적인 개발을 응원해 주세요 ❤️
+
+| WeChat Pay | Alipay |
+| :---: | :---: |
+| <img src="docs/assets/wx.png" width="200" alt="WeChat 후원 QR 코드"> | <img src="docs/assets/zfb.png" width="200" alt="Alipay 후원 QR 코드"> |
+
+</div>
+
+---
