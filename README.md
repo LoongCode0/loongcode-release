@@ -10,7 +10,7 @@
 
 Wraps the Claude Code CLI and OpenAI Codex CLI inside a modern desktop workbench — multi-session conversations, an integrated terminal, a file tree, Git review, command/file palettes, plus visual management for MCP, plugins, skills, and model providers. Works out of the box.
 
-![version](https://img.shields.io/badge/version-0.9.8-6d5efc)
+![version](https://img.shields.io/badge/version-0.9.9-6d5efc)
 ![platform](https://img.shields.io/badge/platform-Windows%20%7C%20macOS-444)
 ![built with](https://img.shields.io/badge/built%20with-Tauri%202%20%2B%20React%2019-2f6df6)
 
@@ -106,7 +106,7 @@ It brings the Agent coding experience — previously confined to the command lin
 - **Dependency management + runtime version management** — Dependencies render instantly from a static catalog (per-item install status detected lazily in the background) and are shown grouped by required/optional; the **required dependencies, Claude Code CLI and Git, support one-click in-app install** (installed directly on Windows; macOS's Git is guided through the system Xcode Command Line Tools), and **OpenAI Codex and OpenCode CLI can also be one-click installed in-app** (having at least one of the three AI CLIs installed is enough). For `uv` / `pnpm` (and `bun`), you can list / install / uninstall / switch between multiple versions, with one-click fallback install supported.
 - **Proxy settings** — Configured per model provider (see above) rather than one global switch; http/https only (SOCKS is not supported). Dependency downloads (CLI installers, `uv`/`pnpm`/`bun`) follow the system proxy by default and can be overridden per dependency.
 - **Environment variable settings** — Inject custom environment variables into CLI subprocesses (Claude/Codex); changes automatically trigger a subprocess restart.
-- **Usage** — See your consumption at a glance; once logged in via Claude or Codex OAuth, a real-time usage badge (session/weekly percentage, refreshed every 5 minutes) shows in the sidebar and on the provider's login card (Codex usage is opt-in via an experimental toggle).
+- **Usage** — See your consumption at a glance; once logged in via Claude or Codex OAuth, a real-time usage badge (session/weekly percentage, refreshed every 5 minutes) shows in the sidebar and on the provider's login card (Codex usage is opt-in via an experimental toggle). A **global account-usage switch** (Settings → General) turns the whole feature off in one flip: the sidebar badge disappears entirely, all background polling and manual refreshing go silent, and the provider card's usage block shows a disabled hint — effective instantly, no restart needed. On macOS, background usage/OAuth status checks no longer trigger the system's "wants to access data from other apps" permission popups.
 
 ### Desktop Experience
 - **App-wide custom context menus** — The conversation area, preview, file tree, task rows, and sidebar empty space all get context menus tailored to their context, replacing the system default menu.
