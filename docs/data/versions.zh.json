@@ -12,8 +12,21 @@
     "fullNotesUrl": null
   },
   {
-    "version": "0.9.0",
+    "version": "0.10.0",
     "status": "latest",
+    "date": "2026-07-22",
+    "title": "接入 Kimi Code · 四 CLI 支持",
+    "summary": [
+      "接入 Kimi Code CLI:任务可在 Claude / Codex / OpenCode / Kimi 四家间自由切换,流式 / 思考 / 工具卡 / 审批应答 / 历史还原 / 子智能体 / 图片输入 / 斜杠命令面板全对齐,底层经 ACP 协议(NDJSON + JSON-RPC)双向长连接驱动,每任务一进程、懒启动、空闲回收,模型 / 思考深度 / 权限档位在线热切换",
+      "Kimi 原生 OAuth 登录(设备码自动打开浏览器,登录 / 登出 / 状态 / 用量)+ K2.7 / K2.7 Highspeed / K3 / K3[1m] 模型档位;也可复用应用模型供应商(env 注入免手配 key,外部供应商思考深度真实生效),AskUserQuestion 渲染为 Claude 级选择卡(点选项即答 + 两步交互)",
+      "Kimi 设置面全打通:技能 / MCP / 记忆(AGENTS.md)/ 插件(marketplace 安装、装卸启停即时生效)/ 子智能体 / 钩子(hooks)面板,跨任务深度搜索与依赖面板检测覆盖 Kimi;并修复分享标题超长发布失败、分享内容工具与正文交替时顺序错乱、错误级系统提示渲染成错误卡"
+    ],
+    "tags": ["Kimi", "四 CLI", "ACP"],
+    "patches": []
+  },
+  {
+    "version": "0.9.0",
+    "status": "released",
     "date": "2026-07-08",
     "title": "接入 OpenCode · 三 CLI 支持",
     "summary": [
