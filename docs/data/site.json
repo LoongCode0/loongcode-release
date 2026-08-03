@@ -1,8 +1,11 @@
 {
   "brand": "LoongCode",
   "tagline": "把 Claude Code 装进桌面的 AI Agent IDE —— 后续规划与发布历程",
-  "currentVersion": "0.10.4",
-  "platforms": ["Windows", "macOS"],
+  "currentVersion": "0.10.5",
+  "platforms": [
+    "Windows",
+    "macOS"
+  ],
   "techBadge": "Tauri 2 + React 19",
   "links": {
     "github": "https://github.com/LoongCode0/loongcode-release",

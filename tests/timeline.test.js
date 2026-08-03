@@ -94,7 +94,7 @@ const siteJson = JSON.parse(
 test('versions.zh.json 计数正确:10 里程碑 / 40 补丁 / 1 规划', () => {
   const stats = computeStats(versionsZh);
   assert.equal(stats.milestoneCount, 10);
-  assert.equal(stats.patchCount, 40);
+  assert.equal(stats.patchCount, 41);
   assert.equal(stats.plannedCount, 1);
 });
 
