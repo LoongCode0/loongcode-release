@@ -91,16 +91,16 @@ const siteJson = JSON.parse(
   readFileSync(new URL('../docs/data/site.json', import.meta.url)),
 );
 
-test('versions.zh.json 计数正确:10 里程碑 / 40 补丁 / 1 规划', () => {
+test('versions.zh.json 计数正确:10 里程碑 / 41 补丁 / 0 规划', () => {
   const stats = computeStats(versionsZh);
   assert.equal(stats.milestoneCount, 10);
   assert.equal(stats.patchCount, 41);
-  assert.equal(stats.plannedCount, 1);
+  assert.equal(stats.plannedCount, 0);
 });
 
-test('versions.zh.json 排序后:首项为无版本号规划,末项为 0.1.0,latest 为 0.10.0', () => {
+test('versions.zh.json 排序后:首项为 0.10.0,末项为 0.1.0,latest 为 0.10.0', () => {
   const sorted = sortEntries(versionsZh);
-  assert.equal(sorted[0].version, null);
+  assert.equal(sorted[0].version, '0.10.0');
   assert.equal(sorted[sorted.length - 1].version, '0.1.0');
   const latest = versionsZh.filter((e) => e.status === 'latest');
   assert.equal(latest.length, 1);

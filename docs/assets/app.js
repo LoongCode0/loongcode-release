@@ -28,7 +28,7 @@ function renderHero(site, stats) {
       <a class="btn" href="${escapeHtml(site.links.download)}" target="_blank" rel="noopener noreferrer">↓ 下载安装包</a>
       <a class="btn ghost" href="#tl">查看时间线</a>
     </div>
-    <div class="meta">规划中 ${stats.plannedCount} 项 · ${stats.milestoneCount} 个已发布里程碑 · ${stats.patchCount} 个补丁</div>`;
+    <div class="meta">${stats.plannedCount ? `规划中 ${stats.plannedCount} 项 · ` : ''}${stats.milestoneCount} 个已发布里程碑 · ${stats.patchCount} 个补丁</div>`;
 }
 
 function renderPatches(patches) {
@@ -78,7 +78,9 @@ function renderTimeline(entries, site) {
     return `<div class="${cls}"><span class="dot"></span><div class="cardwrap">${renderCard(e, site, i === oldestIdx)}</div></div>`;
   }).join('');
 
-  return `<div class="topcap">▲ 规划 · FUTURE</div>${rows}`;
+  const hasPlanned = entries.some((e) => e.status === 'planned');
+  const topcap = hasPlanned ? '<div class="topcap">▲ 规划 · FUTURE</div>' : '';
+  return `${topcap}${rows}`;
 }
 
 function renderFooter(site) {

@@ -1,17 +1,5 @@
 [
   {
-    "version": null,
-    "status": "planned",
-    "date": "待排期",
-    "title": "规划方向（未排期）",
-    "summary": [
-      "Agent Team 多智能体团队协作"
-    ],
-    "tags": ["Agent Team"],
-    "patches": [],
-    "fullNotesUrl": null
-  },
-  {
     "version": "0.10.0",
     "status": "latest",
     "date": "2026-07-22",
