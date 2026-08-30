@@ -91,20 +91,20 @@ const siteJson = JSON.parse(
   readFileSync(new URL('../docs/data/site.json', import.meta.url)),
 );
 
-test('versions.zh.json 计数正确:10 里程碑 / 45 补丁 / 0 规划', () => {
+test('versions.zh.json 计数正确:11 里程碑 / 45 补丁 / 0 规划', () => {
   const stats = computeStats(versionsZh);
-  assert.equal(stats.milestoneCount, 10);
+  assert.equal(stats.milestoneCount, 11);
   assert.equal(stats.patchCount, 45);
   assert.equal(stats.plannedCount, 0);
 });
 
-test('versions.zh.json 排序后:首项为 0.10.0,末项为 0.1.0,latest 为 0.10.0', () => {
+test('versions.zh.json 排序后:首项为 0.11.0,末项为 0.1.0,latest 为 0.11.0', () => {
   const sorted = sortEntries(versionsZh);
-  assert.equal(sorted[0].version, '0.10.0');
+  assert.equal(sorted[0].version, '0.11.0');
   assert.equal(sorted[sorted.length - 1].version, '0.1.0');
   const latest = versionsZh.filter((e) => e.status === 'latest');
   assert.equal(latest.length, 1);
-  assert.equal(latest[0].version, '0.10.0');
+  assert.equal(latest[0].version, '0.11.0');
 });
 
 test('site.json 含必要字段', () => {

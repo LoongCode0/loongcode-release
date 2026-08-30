@@ -1,7 +1,21 @@
 [
   {
-    "version": "0.10.0",
+    "version": "0.11.0",
     "status": "latest",
+    "date": "2026-08-31",
+    "title": "接入 dsh · 第八 CLI 家族",
+    "summary": [
+      "接入 DeepSeek Harness（dsh）第 8 族 CLI（实验功能，beta 门控）:全局单例 dsh web 进程 + HTTP RPC + mux/host 双 WebSocket 事件泵（2s 起指数退避封顶 30s，实例死亡自动重建，会话落盘重启不丢）,插件清单 / 命令与功能门控状态、agent 预设（系统 / 用户根扫描）与模型选择器（经 loongcode 供应商 RPC 注入免手配 key）、实时上下文注入卡（context-injection cards）与 ToolAsk 回执进历史、dsh 技能根扫描进斜杠命令面板、技能 / 记忆设置页、子 agent 流式会话事件（对齐 Claude 的 SubAgentStream 渲染）、原生三档权限选择器（默认 full-access）、fork 重发（session repoint 就地改发）",
+      "新增 Git 图谱可视化:分页 git log --graph 扫描器与解析器（90% 视口滚动分页）,分支弹层新增图谱入口,点击 commit 行展开详情面板,epoch guard 消除刷新竞态",
+      "HTML/HTM 预览升级 UI 编辑模式:bridge 脚本注入（hover / 选中 / 拖动 / 行内编辑,默认休眠）,悬浮配置面板（内容 / 样式 / 属性 / HTML 分区）,DOMParser + eid 补丁引擎源码回写（提交免刷新）,防抖提交流水线 + 撤销重做,卸载时提交未决防抖补丁 · 侧边栏按「全局 / 工作区 / 任务」三分区重组（默认工作区承载非工作区任务）+ zcode 风格顶部操作区,全局 Ctrl+K 搜索 popover（深度搜索 / 含归档勾选 / 动态空查询提示）,看板入口移至任务组头图标按钮 · 右侧文件面板集成终端 tab（常驻渲染 + 面板开合门控,Windows Terminal 风格等比压缩 / 溢出箭头 / 浮动选中态）,侧栏 / 终端面板开合 200ms 滑动动画 · 冷打开历史任务对话区加载过渡动画,FilePanel 空状态改为「打开标签页」卡片面板（列表 / 网格随宽度自适应,关闭最后一个标签后停留展示空状态）",
+      "并修复 kimi / dsh 上下文窗口按供应商行覆盖解析（修 200K 假分母）、composer 输入框封顶 4 行、文件树侧栏背景与左侧栏专用 token 一致、任务行圆角与选中态配色、UI 编辑面板智能定位与内部滚动、拖拽 pointer capture 必提交等多项问题"
+    ],
+    "tags": ["dsh", "Git 图谱", "UI 编辑"],
+    "patches": []
+  },
+  {
+    "version": "0.10.0",
+    "status": "released",
     "date": "2026-07-22",
     "title": "接入 Kimi Code · 四 CLI 支持",
     "summary": [
